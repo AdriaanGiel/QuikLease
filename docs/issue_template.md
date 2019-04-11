@@ -5,7 +5,7 @@
 
 >--**--Code is gereviewed door een ander teamlid.--**--
 
-  --Staan voldoende comments in--
+  * Staan voldoende comments in
 
 
 >--**--Code is getest door een ander teamlid.--**--
