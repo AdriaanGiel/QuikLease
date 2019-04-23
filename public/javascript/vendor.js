@@ -3184,7 +3184,7 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /*!
-  * vue-router v3.0.5
+  * vue-router v3.0.6
   * (c) 2019 Evan You
   * @license MIT
   */
@@ -4955,7 +4955,7 @@ function resolveAsyncComponents (matched) {
           match.components[key] = resolvedDef;
           pending--;
           if (pending <= 0) {
-            next(to);
+            next();
           }
         });
 
@@ -5847,7 +5847,7 @@ function createHref (base, fullPath, mode) {
 }
 
 VueRouter.install = install;
-VueRouter.version = '3.0.5';
+VueRouter.version = '3.0.6';
 
 if (inBrowser && window.Vue) {
   window.Vue.use(VueRouter);
