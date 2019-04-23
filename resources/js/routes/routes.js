@@ -1,5 +1,6 @@
 import VueRouter from 'vue-router';
 import login from '../pages/login';
+import dashboard from '../pages/dashboard';
 
 let routes = [
     {
@@ -10,6 +11,17 @@ let routes = [
             metaTags: [
                 { name: "description", content: "De inlogpagina voor QuikLease" },
                 { property: "og:description", content: "De inlogpagina voor QuikLease" }
+            ]
+        }
+    },
+    {
+        path: '/dashboard',
+        component: login,
+        meta: {
+            title: "Quiklease - dashboard",
+            metaTags: [
+                { name: "description", content: "dashboard" },
+                { property: "og:description", content: "dashboard" }
             ]
         }
     },
