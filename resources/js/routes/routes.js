@@ -2,6 +2,7 @@ import VueRouter from 'vue-router';
 import login from '../pages/login';
 import dashboard from '../pages/dashboard';
 
+
 let routes = [
     {
         path: '/',
@@ -16,7 +17,7 @@ let routes = [
     },
     {
         path: '/dashboard',
-        component: login,
+        component: dashboard,
         meta: {
             title: "Quiklease - dashboard",
             metaTags: [

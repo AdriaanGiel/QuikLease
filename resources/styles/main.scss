@@ -1,5 +1,14 @@
 @import "~bootstrap/dist/css/bootstrap.min.css";
 
 body{
-    background: aqua;
+    background: white;
+}
+.remove-padding{
+    padding: 0px 0px 0px 0px;
+}
+.remove-margin{
+    margin: 0px 0px 0px 0px;
+}
+.margin-top-30{
+    margin: 30px 0px 0px 0px;
 }

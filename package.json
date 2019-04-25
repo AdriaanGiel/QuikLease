@@ -24,7 +24,8 @@
     "pug": "2.0.0-beta11",
     "uiv": "^0.31.5",
     "vue": "^2.6.10",
-    "vue-router": "^3.0.5"
+    "vue-router": "^3.0.5",
+    "vue2-google-maps": "^0.10.6"
   },
   "devDependencies": {
     "resolve-url-loader": "^2.3.1",
