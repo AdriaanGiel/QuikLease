@@ -1,7 +1,7 @@
 <template>
     <div v-on:click="onClick" class="leaseplanButton">
         <div>{{ text }}</div>
-        <span>
+        <span class="svg-holder">
             <IconBase icon-name="location"><Location :is="child_component"></Location></IconBase>
             <!--<IconBase icon-name="location"><Location :is="child_component"></Location></IconBase>-->
         </span>
@@ -67,4 +67,10 @@
         height: 75%;
         margin: 19% 0px auto auto;
     }
+
+    .svg-holder >>> svg{
+        width: 100%;
+        height: 100%;
+    }
+
 </style>
