@@ -1,9 +1,8 @@
 <template>
     <div class="background">
-        bla
         <div class="container">
             <div class="logo">
-                <IconBase icon="Logo"><Logo></Logo></IconBase>
+                <IconBase x="0px" y="0px" viewBox="0 0 803 903" icon="Logo"><Logo class="logosvg"></Logo></IconBase>
             </div>
         </div>
     </div>
@@ -22,25 +21,33 @@
 </script>
 
 <style scoped>
-    .st0 {
-        fill: #3FA9F5;
+    .logosvg > g#fleet {
+        animation-name: move;
+        animation-duration: 2s;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
     }
 
-    .st1 {
-        fill: #FF931E;
-    }
     .background {
         height: 100%;
         width: 100%;
         background-color: black;
         animation-name: colorchangebw;
+        animation-delay: 5s;
         animation-duration: 2s;
         animation-iteration-count: 1;
         animation-fill-mode: forwards;
-        animation-play-state: running;
+    }
+
+    .container {
+        height: inherit;
+        width: inherit;
+        margin: auto auto;
     }
 
     .logo {
+        height: inherit;
+        width: inherit;
         margin: auto auto;
     }
 
@@ -51,6 +58,16 @@
 
         to {
             background-color: white;
+        }
+    }
+
+    @keyframes move {
+        from {
+            opacity: 100;
+        }
+
+        to {
+            opacity: 0;
         }
     }
 </style>
