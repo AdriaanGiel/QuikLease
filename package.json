@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
+    "seed": "node ./seed",
     "start": "node ./bin/www",
     "dev": "npm run development",
     "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
@@ -21,6 +22,7 @@
     "debug": "~2.6.9",
     "dotenv": "^7.0.0",
     "express": "~4.16.0",
+    "faker": "^4.1.0",
     "http-errors": "~1.6.2",
     "laravel-mix": "^4.0.15",
     "morgan": "~1.9.0",
