@@ -4,7 +4,7 @@
             <div class="row">
                 <div class="col-sm-12 col-md-12 col-lg-12">
                     <div class="header">
-                        <img :src="require('~../../../public/images/Logo_66px.png')" alt="QuickLeaseLogo" height="66" width="66"/>
+                        <!--<img :src="require('~../../../public/images/Logo_66px.png')" alt="QuickLeaseLogo" height="66" width="66"/>-->
                         <!--<img :src="images.image" alt="QuickLeaseLogo" height="66" width="66"/>-->
                     </div>
                 </div>

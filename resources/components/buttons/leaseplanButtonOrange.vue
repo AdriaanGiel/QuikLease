@@ -18,7 +18,7 @@
         props:['text', 'iconName'],
         components:{
             IconBase,
-            Location, 
+            Location,
             Bicycle
         },
         data(){

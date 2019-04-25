@@ -8770,20 +8770,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("section", [
     _c("div", { staticClass: "container" }, [
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-sm-12 col-md-12 col-lg-12" }, [
-          _c("div", { staticClass: "header" }, [
-            _c("img", {
-              attrs: {
-                src: __webpack_require__(/*! ~../../../public/images/Logo_66px.png */ "./public/images/Logo_66px.png"),
-                alt: "QuickLeaseLogo",
-                height: "66",
-                width: "66"
-              }
-            })
-          ])
-        ])
-      ]),
+      _vm._m(0),
       _vm._v(" "),
       _c("div", { staticClass: "row" }, [
         _c("div", { staticClass: "col-sm-6 remove-padding" }, [
@@ -8834,7 +8821,18 @@ var render = function() {
     _c("div", { staticClass: "google-map" }, [_c("google-map")], 1)
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-sm-12 col-md-12 col-lg-12" }, [
+        _c("div", { staticClass: "header" })
+      ])
+    ])
+  }
+]
 render._withStripped = true
 
 
@@ -11547,17 +11545,6 @@ try {
 
 module.exports = g;
 
-
-/***/ }),
-
-/***/ "./public/images/Logo_66px.png":
-/*!*************************************!*\
-  !*** ./public/images/Logo_66px.png ***!
-  \*************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "/images/Logo_66px.png?e95ef9bb209557ad8a7db15a8614a0c5";
 
 /***/ }),
 
