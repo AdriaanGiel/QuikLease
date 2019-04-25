@@ -2,10 +2,13 @@
   "ExpandedNodes": [
     "",
     "\\resources",
+    "\\resources\\components",
+    "\\resources\\components\\icons",
+    "\\resources\\images",
     "\\resources\\js",
-    "\\resources\\js\\pages",
-    "\\resources\\js\\routes",
-    "\\resources\\styles"
+    "\\resources\\styles",
+    "\\views"
   ],
+  "SelectedNode": "\\resources\\images\\Logo.png",
   "PreviewInSolutionExplorer": false
 }

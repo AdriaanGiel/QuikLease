@@ -1,8 +1,10 @@
 <template>
     <div class="background">
         <div class="container">
+            <div class="circle">
+            </div>    
             <div class="logo">
-                <IconBase x="0px" y="0px" viewBox="0 0 803 903" icon="Logo"><Logo class="logosvg"></Logo></IconBase>
+                <IconBase x="0px" y="0px" width="100%" height="100%" viewBox="0 0 803 903" icon="Logo"><Logo class="logosvg"></Logo></IconBase>
             </div>
         </div>
     </div>
@@ -21,33 +23,41 @@
 </script>
 
 <style scoped>
-    .logosvg > g#fleet {
-        animation-name: move;
-        animation-duration: 2s;
-        animation-iteration-count: 1;
-        animation-fill-mode: forwards;
-    }
-
     .background {
-        height: 100%;
-        width: 100%;
+        height: 100vh;
+        width: 100vw;
         background-color: black;
         animation-name: colorchangebw;
-        animation-delay: 5s;
+        animation-delay: 2s;
         animation-duration: 2s;
         animation-iteration-count: 1;
         animation-fill-mode: forwards;
     }
 
     .container {
+       
         height: inherit;
         width: inherit;
         margin: auto auto;
     }
 
+    .circle {
+        position: absolute;
+        left: 25%;
+        top: 30%;
+        height: 500px;
+        width: 500px;
+        border-radius: 50%;
+        margin: auto auto;
+        background-color: white;
+    }
+
     .logo {
-        height: inherit;
-        width: inherit;
+        position: absolute;
+        left: 33%;
+        top: 33%;
+        height: 33%;
+        width: 33%;
         margin: auto auto;
     }
 
@@ -58,16 +68,6 @@
 
         to {
             background-color: white;
-        }
-    }
-
-    @keyframes move {
-        from {
-            opacity: 100;
-        }
-
-        to {
-            opacity: 0;
         }
     }
 </style>

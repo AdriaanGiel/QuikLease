@@ -2006,6 +2006,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -2144,7 +2146,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.logosvg > g#fleet[data-v-780e8960] {\n    -webkit-animation-name: move-data-v-780e8960;\n            animation-name: move-data-v-780e8960;\n    -webkit-animation-duration: 2s;\n            animation-duration: 2s;\n    -webkit-animation-iteration-count: 1;\n            animation-iteration-count: 1;\n    -webkit-animation-fill-mode: forwards;\n            animation-fill-mode: forwards;\n}\n.background[data-v-780e8960] {\n    height: 100%;\n    width: 100%;\n    background-color: black;\n    -webkit-animation-name: colorchangebw-data-v-780e8960;\n            animation-name: colorchangebw-data-v-780e8960;\n    -webkit-animation-delay: 5s;\n            animation-delay: 5s;\n    -webkit-animation-duration: 2s;\n            animation-duration: 2s;\n    -webkit-animation-iteration-count: 1;\n            animation-iteration-count: 1;\n    -webkit-animation-fill-mode: forwards;\n            animation-fill-mode: forwards;\n}\n.container[data-v-780e8960] {\n    height: inherit;\n    width: inherit;\n    margin: auto auto;\n}\n.logo[data-v-780e8960] {\n    height: inherit;\n    width: inherit;\n    margin: auto auto;\n}\n@-webkit-keyframes colorchangebw-data-v-780e8960 {\nfrom {\n        background-color: black;\n}\nto {\n        background-color: white;\n}\n}\n@keyframes colorchangebw-data-v-780e8960 {\nfrom {\n        background-color: black;\n}\nto {\n        background-color: white;\n}\n}\n@-webkit-keyframes move-data-v-780e8960 {\nfrom {\n        opacity: 100;\n}\nto {\n        opacity: 0;\n}\n}\n@keyframes move-data-v-780e8960 {\nfrom {\n        opacity: 100;\n}\nto {\n        opacity: 0;\n}\n}\n", ""]);
+exports.push([module.i, "\n.background[data-v-780e8960] {\n    height: 100vh;\n    width: 100vw;\n    background-color: black;\n    -webkit-animation-name: colorchangebw-data-v-780e8960;\n            animation-name: colorchangebw-data-v-780e8960;\n    -webkit-animation-delay: 2s;\n            animation-delay: 2s;\n    -webkit-animation-duration: 2s;\n            animation-duration: 2s;\n    -webkit-animation-iteration-count: 1;\n            animation-iteration-count: 1;\n    -webkit-animation-fill-mode: forwards;\n            animation-fill-mode: forwards;\n}\n.container[data-v-780e8960] {\n   \n    height: inherit;\n    width: inherit;\n    margin: auto auto;\n}\n.circle[data-v-780e8960] {\n    position: absolute;\n    left: 25%;\n    top: 30%;\n    height: 500px;\n    width: 500px;\n    border-radius: 50%;\n    margin: auto auto;\n    background-color: white;\n}\n.logo[data-v-780e8960] {\n    position: absolute;\n    left: 33%;\n    top: 33%;\n    height: 33%;\n    width: 33%;\n    margin: auto auto;\n}\n@-webkit-keyframes colorchangebw-data-v-780e8960 {\nfrom {\n        background-color: black;\n}\nto {\n        background-color: white;\n}\n}\n@keyframes colorchangebw-data-v-780e8960 {\nfrom {\n        background-color: black;\n}\nto {\n        background-color: white;\n}\n}\n", ""]);
 
 // exports
 
@@ -8832,7 +8834,7 @@ var render = function() {
       })
     ]),
     _vm._v(" "),
-    _c("g", { attrs: { id: "fleet" } }, [
+    _c("g", { staticStyle: {}, attrs: { id: "fleet" } }, [
       _c("path", {
         staticStyle: { fill: "#FF931E" },
         attrs: {
@@ -9052,6 +9054,8 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "background" }, [
     _c("div", { staticClass: "container" }, [
+      _c("div", { staticClass: "circle" }),
+      _vm._v(" "),
       _c(
         "div",
         { staticClass: "logo" },
@@ -9062,6 +9066,8 @@ var render = function() {
               attrs: {
                 x: "0px",
                 y: "0px",
+                width: "100%",
+                height: "100%",
                 viewBox: "0 0 803 903",
                 icon: "Logo"
               }
