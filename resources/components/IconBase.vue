@@ -22,11 +22,11 @@
             },
             width: {
                 type: [Number, String],
-                default: 63
+                default: 64
             },
             height: {
                 type: [Number, String],
-                default: 63
+                default: 64
             },
             iconColor: {
                 type: String,
