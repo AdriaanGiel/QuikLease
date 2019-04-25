@@ -62,8 +62,9 @@
     }
 
     .leaseplanButton >>> span{
-        position: absolute;
-        top: 35%;
-        left: 30%;
+        display: block;
+        width: 100%;
+        height: 75%;
+        margin: 19% 0px auto auto;
     }
 </style>

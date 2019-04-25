@@ -2077,7 +2077,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.leaseplanButton[data-v-77209294]{\n    width: 160px;\n    height: 160px;\n    background-color: #fe8d12;\n    box-shadow: grey 3px 3px;\n    border-radius: 6px;\n    position: relative;\n    float: left;\n}\n.leaseplanButton[data-v-77209294] div{\n    font-size: 20px;\n    font-weight: bold;\n    font-family: \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n    color: white;\n    width: 100%;\n    text-align: center;\n    position: absolute;\n    top: 12%;\n}\n.leaseplanButton[data-v-77209294] span{\n    position: absolute;\n    top: 35%;\n    left: 30%;\n}\n", ""]);
+exports.push([module.i, "\n.leaseplanButton[data-v-77209294]{\n    width: 160px;\n    height: 160px;\n    background-color: #fe8d12;\n    box-shadow: grey 3px 3px;\n    border-radius: 6px;\n    position: relative;\n    float: left;\n}\n.leaseplanButton[data-v-77209294] div{\n    font-size: 20px;\n    font-weight: bold;\n    font-family: \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n    color: white;\n    width: 100%;\n    text-align: center;\n    position: absolute;\n    top: 12%;\n}\n.leaseplanButton[data-v-77209294] span{\n    display: block;\n    width: 100%;\n    height: 75%;\n    margin: 19% 0px auto auto;\n}\n", ""]);
 
 // exports
 
