@@ -19,8 +19,6 @@ module.exports = {
             });
         }
 
-        console.log(schools);
-
         School.bulkCreate(schools)
             .then(() => console.log("schools seeded"));
     }

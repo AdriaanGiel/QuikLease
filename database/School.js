@@ -12,8 +12,8 @@ module.exports = (sequelize,DataTypes) => {
     });
 
     School.associate = function(models){
-        models.School.hasMany(models.History);
         models.School.hasMany(models.User);
+        models.School.hasMany(models.BikeRack);
     };
 
     return School;

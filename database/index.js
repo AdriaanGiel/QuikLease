@@ -22,6 +22,8 @@ fs.readdirSync(__dirname)
         db[model.name] = model;
     });
 
+// TODO Associations
+
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 

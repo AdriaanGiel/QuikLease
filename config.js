@@ -12,6 +12,16 @@ module.exports = {
             storage: path.resolve(__dirname,'./quicklease.sqlite')
         }
     },
+    dbs:{
+        database: process.env.DB_S_NAME || 'fleetmanager',
+        user: process.env.DB_S_USER || 'fleet',
+        password: process.env.DB_S_PASS || 'secret',
+        options: {
+            dialect: process.env.DB_S_DIALECT || 'sqlite',
+            host: process.env.DB_S_HOST || 'localhost',
+            storage: path.resolve(__dirname,'./quickfleet.sqlite')
+        }
+    },
     authentication:{
         jwtSecret: process.env.JWT_SECRET || 'localsecret'
     }
