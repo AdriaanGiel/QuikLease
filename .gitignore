@@ -2,4 +2,5 @@
 /.idea
 /public
 /quicklease.sqlite
+/quickfleet.sqlite
 /.env
