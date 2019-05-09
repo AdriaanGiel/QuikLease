@@ -3,7 +3,7 @@ let {History,BikeRack} = require("../database");
 module.exports = {
     async index(req,res){
 
-        const logs = History.findAll({
+        const logs = await History.findAll({
             include:[{model:BikeRack}]
         });
 

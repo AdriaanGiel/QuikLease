@@ -1,4 +1,3 @@
-
 require('dotenv').config();
 const fs = require('fs');
 const path = require('path');
@@ -22,9 +21,29 @@ fs.readdirSync(__dirname)
         db[model.name] = model;
     });
 
-// TODO Associations
-
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
+
+
+
+// Associations
+db.History.belongsTo(db.User);
+db.History.belongsTo(db.Bike);
+db.History.belongsTo(db.BikeRack);
+
+db.User.hasMany(db.History);
+db.User.hasOne(db.Profile);
+
+db.Profile.belongsTo(db.School);
+db.Profile.belongsTo(db.User);
+
+db.Bike.hasMany(db.History);
+
+db.BikeRack.hasMany(db.History);
+db.BikeRack.belongsTo(db.School);
+
+db.School.hasMany(db.BikeRack);
+db.School.hasMany(db.User);
+
 
 module.exports = db;

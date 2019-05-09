@@ -4,15 +4,18 @@ let bikes = [];
 let racks = [];
 
 School.findAll({}).then((schools) => {
-    for(let i = 0; i < (45 * 1500); i++){
+    for(let i = 0; i < (45 * 15); i++){
         let match = Math.floor(Math.random()* Math.floor(2));
-        let school = schools[Math.floor((Math.random()*schools.length - 1) + 1)].id;
+        let schoolIndex = Math.floor((Math.random()*schools.length - 1) + 1);
+        let school = schools[schoolIndex].id;
+        
+        console.log(match);
 
         bikes.push({active: match});
         if(match === 1){
-            racks.push({occupied: 0, school: school});
+            racks.push({occupied: 0, SchoolId: school});
         }else{
-            racks.push({occupied: 1, school: school});
+            racks.push({occupied: 1, SchoolId: school});
         }
     }
 });

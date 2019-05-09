@@ -14,9 +14,9 @@ module.exports = {
         getAllData().then((data) => {
             for(let i = 0; i < 1000; i++){
                 History.create({
-                    bike: data.bikes[Math.floor((Math.random()*data.bikes.length -1) + 1)].id,
-                    user: data.users[Math.floor((Math.random()*data.users.length -1) + 1)].id,
-                    bike_rack: data.racks[Math.floor((Math.random()*data.racks.length -1) + 1)].id
+                    BikeId: data.bikes[Math.floor((Math.random()*data.bikes.length -1) + 1)].id,
+                    UserId: data.users[Math.floor((Math.random()*data.users.length -1) + 1)].id,
+                    BikeRackId: data.racks[Math.floor((Math.random()*data.racks.length -1) + 1)].id
                 });
             }
 

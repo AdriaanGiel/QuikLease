@@ -16,7 +16,7 @@ async function createUser(faker){
             year: 2,
             age: 20,
             origin: "",
-            user: user.id
+            UserId: user.id
         });
     });
 }

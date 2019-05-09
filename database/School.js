@@ -1,4 +1,3 @@
-const {History} = require('../database');
 module.exports = (sequelize,DataTypes) => {
 
     const School = sequelize.define('School',{
@@ -10,11 +9,6 @@ module.exports = (sequelize,DataTypes) => {
         zipcode:DataTypes.STRING,
         location:DataTypes.STRING
     });
-
-    School.associate = function(models){
-        models.School.hasMany(models.User);
-        models.School.hasMany(models.BikeRack);
-    };
 
     return School;
 
