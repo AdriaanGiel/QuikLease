@@ -1,14 +1,18 @@
-let {History,BikeRack} = require("../database");
+let {School,BikeRack} = require("../database");
 
 module.exports = {
     async index(req,res){
 
-        const logs = await History.findAll({
+        const school = await School.findAll({
             include:[{model:BikeRack}]
         });
 
+        return res.json({school: school});
 
-
-        return res.json({test: logs});
+        // const logs = await History.findAll({
+        //     include:[{all:true}]
+        // });
+        //
+        // return res.json({test: logs});
     }
 };
