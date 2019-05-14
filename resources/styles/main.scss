@@ -20,6 +20,16 @@ g#fleet {
     animation-fill-mode: forwards;
 }
 
+.clearfix {
+    overflow: auto;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
 @keyframes move {
     from {
         transform: translateX(-500%);

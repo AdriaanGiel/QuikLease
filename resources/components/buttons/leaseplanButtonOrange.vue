@@ -1,10 +1,10 @@
 <template>
     <div v-on:click="onClick" class="leaseplanButton">
         <div>{{ text }}</div>
-        <span>
-            <IconBase icon-name="location"><Location :is="child_component"></Location></IconBase>
+        <div class="icon-holder">
+                <IconBase width="70%" height="60%" viewBox="0 0 500 500" icon-name="location"><Location :is="child_component"></Location></IconBase>
+        </div>
             <!--<IconBase icon-name="location"><Location :is="child_component"></Location></IconBase>-->
-        </span>
     </div>
 </template>
 
@@ -39,8 +39,8 @@
 
 <style scoped>
     .leaseplanButton{
-        width: 160px;
-        height: 160px;
+        width: 46%;
+        height: 201px;
         background-color: #fe8d12;
         box-shadow: grey 3px 3px;
         -webkit-border-radius: 6px;
@@ -49,6 +49,7 @@
         position: relative;
         float: left;
     }
+
 
     .leaseplanButton >>> div{
         font-size: 20px;
@@ -61,10 +62,9 @@
         top: 12%;
     }
 
-    .leaseplanButton >>> span{
-        display: block;
-        width: 100%;
-        height: 75%;
-        margin: 19% 0px auto auto;
+    .icon-holder{
+        padding: 20% 13%;
+        text-align: center;
+        /*margin-top: 20%;*/
     }
 </style>

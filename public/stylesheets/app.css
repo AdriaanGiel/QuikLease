@@ -29,6 +29,16 @@ g#fleet {
           animation-fill-mode: forwards;
 }
 
+.clearfix {
+  overflow: auto;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
 @-webkit-keyframes move {
   from {
     -webkit-transform: translateX(-500%);
