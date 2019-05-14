@@ -18,3 +18,48 @@
   margin: 30px 0px 0px 0px;
 }
 
+g#fleet {
+  -webkit-animation-name: move;
+          animation-name: move;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.clearfix {
+  overflow: auto;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+@-webkit-keyframes move {
+  from {
+    -webkit-transform: translateX(-500%);
+            transform: translateX(-500%);
+  }
+
+  to {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+  }
+}
+
+@keyframes move {
+  from {
+    -webkit-transform: translateX(-500%);
+            transform: translateX(-500%);
+  }
+
+  to {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+  }
+}
+

@@ -21,13 +21,11 @@
 </script>
 
 <style scoped>
-
     .startRouteBtn{
         background-color: white;
-        width: 354px;
+        width: 100%;
         height: 160px;
-        border: 5px solid #fe8d12;
-        box-shadow: grey 3px 3px;
+        border: 3px solid #fe8d12;
         -webkit-border-radius: 6px;
         -moz-border-radius: 6px;
         border-radius: 6px;
@@ -40,9 +38,6 @@
         font-weight: bold;
         font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
         color: #fe8d12;
-        position: absolute;
-        top: 36%;
-        left: 8%;
+        padding: 12%;
     }
-
 </style>

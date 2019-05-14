@@ -2,11 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9fd98d04-d59c-4c25-9a65-8475256fcbdc" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/bootstrap.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/components/GoogleMap.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/components/GoogleMap.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/components/IconBase.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/components/IconBase.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/components/buttons/leaseplanButtonOrange.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/components/buttons/leaseplanButtonOrange.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/components/buttons/start.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/components/buttons/start.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/components/icons/Location.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/components/icons/Location.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/components/locations_holder.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/components/locations_holder.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/pages/dashboard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/pages/dashboard.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/pages/login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/pages/login.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/styles/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/styles/main.scss" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -79,7 +84,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="34">
@@ -88,11 +93,20 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/components/locations_holder.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="515">
+              <caret line="191" column="8" selection-start-line="191" selection-start-column="8" selection-end-line="191" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="170">
+              <first_editor relative-caret-position="323">
                 <caret line="19" column="3" selection-start-line="19" selection-start-column="3" selection-end-line="19" selection-end-column="3" />
               </first_editor>
               <second_editor />
@@ -117,8 +131,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/js/routes/routes.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="23" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
+            <state relative-caret-position="119">
+              <caret line="9" column="15" selection-start-line="9" selection-start-column="15" selection-end-line="9" selection-end-column="15" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
               </folding>
@@ -130,7 +144,7 @@
         <entry file="file://$PROJECT_DIR$/resources/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="85">
-              <caret line="5" column="15" lean-forward="true" selection-start-line="5" selection-start-column="15" selection-end-line="5" selection-end-column="15" />
+              <caret line="5" column="15" selection-start-line="5" selection-start-column="15" selection-end-line="5" selection-end-column="15" />
             </state>
           </provider>
         </entry>
@@ -138,7 +152,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/js/bootstrap.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
+            <state relative-caret-position="119">
               <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
               <folding>
                 <element signature="e#0#22#0" expanded="true" />
@@ -208,7 +222,7 @@
       <path value="$PROJECT_DIR$/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="58" />
     <option name="y" value="49" />
     <option name="width" value="1357" />
@@ -220,34 +234,53 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="quiklease" type="b2602c69:ProjectViewProjectNode" />
-              <item name="quiklease" type="462c0819:PsiDirectoryNode" />
+              <item name="QuikLease" type="b2602c69:ProjectViewProjectNode" />
+              <item name="QuikLease" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="quiklease" type="b2602c69:ProjectViewProjectNode" />
-              <item name="quiklease" type="462c0819:PsiDirectoryNode" />
+              <item name="QuikLease" type="b2602c69:ProjectViewProjectNode" />
+              <item name="QuikLease" type="462c0819:PsiDirectoryNode" />
+              <item name="docs" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="QuikLease" type="b2602c69:ProjectViewProjectNode" />
+              <item name="QuikLease" type="462c0819:PsiDirectoryNode" />
               <item name="public" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="quiklease" type="b2602c69:ProjectViewProjectNode" />
-              <item name="quiklease" type="462c0819:PsiDirectoryNode" />
+              <item name="QuikLease" type="b2602c69:ProjectViewProjectNode" />
+              <item name="QuikLease" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="quiklease" type="b2602c69:ProjectViewProjectNode" />
-              <item name="quiklease" type="462c0819:PsiDirectoryNode" />
+              <item name="QuikLease" type="b2602c69:ProjectViewProjectNode" />
+              <item name="QuikLease" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="QuikLease" type="b2602c69:ProjectViewProjectNode" />
+              <item name="QuikLease" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="buttons" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="QuikLease" type="b2602c69:ProjectViewProjectNode" />
+              <item name="QuikLease" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="icons" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -302,17 +335,16 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5596000" />
+    <option name="totallyTimeSpent" value="5860000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="58" y="49" width="1357" height="890" extended-state="0" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1869" height="1096" extended-state="6" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
       <window_info id="npm" order="1" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="2" visible="true" weight="0.32613724" />
+      <window_info content_ui="combo" id="Project" order="2" visible="true" weight="0.17302378" />
       <window_info id="Structure" order="3" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="0" sideWeight="0.4996145" visible="true" weight="0.24206349" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="0" sideWeight="0.4996145" visible="true" weight="0.3087318" />
       <window_info anchor="bottom" id="Database Changes" order="1" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="2" sideWeight="0.5003855" side_tool="true" weight="0.24206349" />
       <window_info anchor="bottom" id="Version Control" order="3" show_stripe_button="false" />
@@ -323,7 +355,7 @@
       <window_info anchor="bottom" id="Debug" order="8" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="11" />
+      <window_info anchor="bottom" id="TODO" order="11" weight="0.32952183" />
       <window_info anchor="right" id="Database" order="0" />
       <window_info anchor="right" id="Mongo Explorer" order="1" />
       <window_info anchor="right" id="Commander" order="2" weight="0.4" />
@@ -394,7 +426,7 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="170">
+          <first_editor relative-caret-position="323">
             <caret line="19" column="3" selection-start-line="19" selection-start-column="3" selection-end-line="19" selection-end-column="3" />
           </first_editor>
           <second_editor />
@@ -420,8 +452,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/js/routes/routes.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="23" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
+        <state relative-caret-position="119">
+          <caret line="9" column="15" selection-start-line="9" selection-start-column="15" selection-end-line="9" selection-end-column="15" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
           </folding>
@@ -431,13 +463,13 @@
     <entry file="file://$PROJECT_DIR$/resources/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
-          <caret line="5" column="15" lean-forward="true" selection-start-line="5" selection-start-column="15" selection-end-line="5" selection-end-column="15" />
+          <caret line="5" column="15" selection-start-line="5" selection-start-column="15" selection-end-line="5" selection-end-column="15" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/js/bootstrap.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
+        <state relative-caret-position="119">
           <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
           <folding>
             <element signature="e#0#22#0" expanded="true" />
