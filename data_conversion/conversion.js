@@ -55,6 +55,34 @@ let school_data =
                 575,
                 625
             ],
+            added_bikes: [
+                109,
+                117,
+                140,
+                157,
+                637,
+                661,
+                62,
+                217,
+                47,
+                338,
+                32,
+                126,
+                109,
+                396,
+                420,
+                51,
+                230,
+                474,
+                351,
+                269,
+                152,
+                228,
+                187,
+                63,
+                408,
+                135
+            ],
             removed_bikes: [
                 199,
                 328,
@@ -104,6 +132,26 @@ let school_data =
                 582,
                 604,
                 629
+            ],
+            added_bikes: [
+                398,
+                443,
+                453,
+                490,
+                546,
+                576,
+                584,
+                637,
+                661,
+                62,
+                455,
+                373,
+                10,
+                367,
+                225,
+                331,
+                408,
+                135
             ],
             removed_bikes: [
                 56,
@@ -155,6 +203,26 @@ let school_data =
                 547,
                 603,
                 647
+            ],
+            added_bikes: [
+                398,
+                443,
+                453,
+                490,
+                546,
+                576,
+                584,
+                637,
+                661,
+                62,
+                455,
+                373,
+                10,
+                367,
+                225,
+                331,
+                408,
+                135
             ],
             removed_bikes: [
                 32,
@@ -226,6 +294,34 @@ let school_data =
                 659,
                 667
             ],
+            added_bikes: [
+                109,
+                117,
+                140,
+                157,
+                637,
+                661,
+                62,
+                217,
+                47,
+                338,
+                32,
+                126,
+                109,
+                396,
+                420,
+                51,
+                230,
+                474,
+                351,
+                269,
+                152,
+                228,
+                187,
+                63,
+                408,
+                135
+            ],
             removed_bikes: [
                 88,
                 111,
@@ -269,6 +365,47 @@ let school_data =
                 594,
                 605,
                 618
+            ],
+            added_bikes: [
+                157,
+                170,
+                254,
+                275,
+                302,
+                318,
+                330,
+                398,
+                443,
+                453,
+                490,
+                217,
+                47,
+                338,
+                32,
+                126,
+                109,
+                396,
+                420,
+                51,
+                230,
+                474,
+                351,
+                491,
+                305,
+                29,
+                455,
+                373,
+                10,
+                367,
+                225,
+                331,
+                269,
+                152,
+                228,
+                187,
+                63,
+                408,
+                135
             ],
             removed_bikes: [
                 490,
@@ -334,6 +471,18 @@ let school_data =
                 632,
                 655
             ],
+            added_bikes: [
+                109,
+                117,
+                140,
+                157,
+                170,
+                254,
+                275,
+                302,
+                318,
+                135
+            ],
             removed_bikes: [
                 153,
                 475,
@@ -387,6 +536,25 @@ let school_data =
                 656,
                 674
             ],
+            added_bikes: [
+                109,
+                491,
+                305,
+                29,
+                455,
+                373,
+                10,
+                367,
+                225,
+                331,
+                269,
+                152,
+                228,
+                187,
+                63,
+                408,
+                135
+            ],
             removed_bikes: [
                 439,
                 141,
@@ -435,6 +603,18 @@ let school_data =
                 562,
                 595,
                 672
+            ],
+            added_bikes: [
+                367,
+                225,
+                331,
+                269,
+                152,
+                228,
+                187,
+                63,
+                408,
+                135
             ],
             removed_bikes: [
                 139,
@@ -485,6 +665,26 @@ let school_data =
                 583,
                 597,
                 653
+            ],
+            added_bikes: [
+                398,
+                443,
+                453,
+                490,
+                546,
+                576,
+                584,
+                637,
+                661,
+                62,
+                455,
+                373,
+                10,
+                367,
+                225,
+                331,
+                408,
+                135
             ],
             removed_bikes: [
                 81,
@@ -542,6 +742,11 @@ let school_data =
                 608,
                 639,
                 650
+            ],
+            added_bikes: [
+                109,
+                187,
+                135
             ],
             removed_bikes: [
                 453,
@@ -614,6 +819,38 @@ let school_data =
                 669,
                 671
             ],
+            added_bikes: [
+                109,
+                117,
+                330,
+                398,
+                443,
+                453,
+                490,
+                546,
+                576,
+                584,
+                637,
+                230,
+                474,
+                351,
+                491,
+                305,
+                29,
+                455,
+                373,
+                10,
+                367,
+                225,
+                331,
+                269,
+                152,
+                228,
+                187,
+                63,
+                408,
+                135
+            ],
             removed_bikes: [
                 163,
                 367,
@@ -660,6 +897,15 @@ let school_data =
                 577,
                 610,
                 645
+            ],
+            added_bikes: [
+                109,
+                117,
+                140,
+                157,
+                170,
+                254,
+                135
             ],
             removed_bikes: [
                 147,
@@ -714,6 +960,47 @@ let school_data =
                 630,
                 631
             ],
+            added_bikes: [
+                157,
+                170,
+                254,
+                275,
+                302,
+                318,
+                330,
+                398,
+                443,
+                453,
+                490,
+                217,
+                47,
+                338,
+                32,
+                126,
+                109,
+                396,
+                420,
+                51,
+                230,
+                474,
+                351,
+                491,
+                305,
+                29,
+                455,
+                373,
+                10,
+                367,
+                225,
+                331,
+                269,
+                152,
+                228,
+                187,
+                63,
+                408,
+                135
+            ],
             removed_bikes: [
                 284,
                 145,
@@ -760,6 +1047,33 @@ let school_data =
                 569,
                 588,
                 648
+            ],
+            added_bikes: [
+                109,
+                117,
+                140,
+                157,
+                170,
+                254,
+                275,
+                302,
+                318,
+                330,
+                398,
+                443,
+                453,
+                490,
+                546,
+                576,
+                225,
+                331,
+                269,
+                152,
+                228,
+                187,
+                63,
+                408,
+                135
             ],
             removed_bikes: [
                 62,
@@ -819,6 +1133,34 @@ let school_data =
                 637,
                 661
             ],
+            added_bikes: [
+                109,
+                117,
+                140,
+                157,
+                637,
+                661,
+                62,
+                217,
+                47,
+                338,
+                32,
+                126,
+                109,
+                396,
+                420,
+                51,
+                230,
+                474,
+                351,
+                269,
+                152,
+                228,
+                187,
+                63,
+                408,
+                135
+            ],
             removed_bikes: [
                 347,
                 307,
@@ -860,30 +1202,34 @@ const map_range = (num, in_min, in_max, out_min, out_max) => {
 let mapped_school_data = school_data.school.map((school) => {
     
     // CONVERT LOCATION ID
-    let school_id = map_range(school.school_id, 0, 12, 0, 1);
-    console.log(current_bikes)
+    let school_id = map_range(school.school_id, 0, 12, 0, 1).toFixed(3);
 
     // CONVERT TOTAL AMOUNT OF BIKES
     // first calculate how much bikes there are (sum of all bike id's)
     let current_bikes = map_range(school.current_bikes.length, 0, 50, 0, 1);
-    current_bikes = map_range(0,10,0,1)
-    console.log(current_bikes)
 
     // CONVERT BIKES ADDED
+    // first calculate how much bikes there are (sum of all bike id's)
+    let added_bikes = map_range(school.added_bikes.length, 0, 50, 0, 1);
 
     // CONVERT BIKES REMOVED
+    // first calculate how much bikes there are (sum of all bike id's)
+    let removed_bikes = map_range(school.removed_bikes.length, 0, 50, 0, 1);
 
     // CONVERT DEMAND
 
     // CONVERT TIMESTAMP
+    let timestamp = "0,"+ school.timestamp
 
     return {
-        school_id: school.school_id,
-        //current_bikes: school.current_bikes,
-        //omgevormt: school.timestamps
+        school_id: school_id,
+        current_bikes: current_bikes,
+        added_bikes: added_bikes,
+        removed_bikes: removed_bikes,
+        timestamp: timestamp
     } 
 });
 
 // SEND CONVERTED DATA TO AI DATABASE
 // temporary log the data for debugging
-//console.log(mapped_school_data);
+console.log(mapped_school_data);
