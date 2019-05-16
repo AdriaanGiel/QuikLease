@@ -1,8 +1,9 @@
-// GET WEATHER DATA
+// setup requirements
 const {AI_data} = require('../ai_database')
 const axios = require('axios');
 const util = require('util');
 
+// GET WEATHER DATA
 async function getWeatherData() {
     let response = await axios.get("https://api.openweathermap.org/data/2.5/weather?q=Rotterdam&appid=3f34fa54268254527865437906d9f5bd")
     // GET THE WEATHER INFO
@@ -141,6 +142,9 @@ async function getWeatherData() {
 
 async function getBikeData() {
     // GET BIKE RACKS DATA
+
+    // get data from raw data database
+
 
     // instead of getting it from a server we make a temporary data array
     let school_data = 
