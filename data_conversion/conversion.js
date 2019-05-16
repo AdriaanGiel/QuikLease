@@ -1,8 +1,9 @@
 // GET WEATHER DATA
+const {AI_data} = require('../ai_database')
 const axios = require('axios');
 const util = require('util');
 
-async function getWeather() {
+async function getWeatherData() {
     let response = await axios.get("https://api.openweathermap.org/data/2.5/weather?q=Rotterdam&appid=3f34fa54268254527865437906d9f5bd")
     // GET THE WEATHER INFO
     let weathertype = response.data.weather[0].id;
@@ -1353,13 +1354,19 @@ async function getBikeData() {
     });
     return mapped_school_data
 }
-getWeather().then(function (result) {
-    console.log("weather data: " + util.inspect(result));
-})
 
-getBikeData().then(function (result) {
-    console.log("Bike data: " + util.inspect(result));
-})
 // SEND CONVERTED DATA TO AI DATABASE
-// temporary log the data for debugging
-//console.log(mapped_school_data);
+async function sendData(){
+    let bike_data = await getBikeData()
+    let weather_data = await getWeatherData()
+    let data = await AI_data.create({
+        data: JSON.stringify(bike_data),
+        weather: JSON.stringify(result)
+    })
+    // debug result
+    //console.log("bike data: " + util.inspect(bike_data));
+    //console.log("weather data: " + util.inspect(weather_data));
+    console.log(data)
+}
+
+sendData()
