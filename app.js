@@ -7,7 +7,7 @@ let {sequelize} = require('./database');
 let {second_sequelize} = require('./ai_database');
 
 async function startDatabase(){
-  return await sequelize.sync({force:true});
+  return await sequelize.sync();
 }
 
 async function startAIDatabase(){

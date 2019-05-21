@@ -1,33 +1,55 @@
-const {Bike,BikeRack,School} = require('../database');
+const {Bike,BikeRack,School,History} = require('../database');
 
-let bikes = [];
-let racks = [];
+let histories = [];
 
 School.findAll({}).then((schools) => {
-    for(let i = 0; i < (45 * 15); i++){
-        let match = Math.floor(Math.random()* Math.floor(2));
-        let schoolIndex = Math.floor((Math.random()*schools.length - 1) + 1);
-        let school = schools[schoolIndex].id;
-        
-        console.log(match);
 
-        bikes.push({active: match});
-        if(match === 1){
-            racks.push({occupied: 0, SchoolId: school});
-        }else{
-            racks.push({occupied: 1, SchoolId: school});
+    schools.forEach((school) => {
+        let racks = [];
+        let bikes = [];
+
+        for(let i = 0; i < 20; i++){
+            racks.push({
+                occupied: true,
+                schoolId: school.id
+            });
+
+            bikes.push({
+                active: false
+            });
         }
-    }
+
+        createHistories(bikes,racks).then(async () => {
+
+            await
+
+        });
+
+
+
+    });
 });
 
 
+async function createHistories(bikes,racks){
+
+    let added_bikes = await Bike.bulkCreate(bikes);
+    let added_racks = await BikeRack.bulkCreate(racks);
+
+    added_bikes.map((i, bike) => {
+        histories.push({
+            park: true,
+            BikeId: bike.id,
+            UserId: 1,
+            BikeRackId: added_racks[i].id
+        });
+    });
+
+}
+
 module.exports =  {
     async run(){
-        Bike.bulkCreate(bikes)
-            .then(() => console.log("Bikes seeded"));
 
-        BikeRack.bulkCreate(racks)
-            .then(() => console.log("racks seeded"));
     }
 };
 
