@@ -24,12 +24,6 @@
                 </div>
                 <div class="col-sm-5">
                     <locations_holder></locations_holder>
-                    <div style="
-    position: absolute;
-    bottom: 0px;
-" class="click-button" v-on:click="onClick">
-                        verder
-                    </div>
                 </div>
             </div>
         </div>
@@ -42,11 +36,9 @@
 
 
 <script>
-    import * as Vue from "vue";
     import leaseplanButtonOrange from '../../components/buttons/leaseplanButtonOrange';
     import start from '../../components/buttons/start';
     import locations_holder from '../../components/locations_holder';
-    // import image from "../../../resources/images/Logo.png"
     import GoogleMap from "../../components/GoogleMap";
     import CustomHeader from "../../components/Custom-Header";
     import Logout from "../../components/buttons/logout";
@@ -63,12 +55,22 @@
             Logout
         },
         methods: {
-            onClick: function (index) {
-                //let the algorithm do his job
-                // console.log(locations[index].id);
-                console.log(event.currentTarget.id)
-                document.getElementById('id1').style.color = 'red'
-            }
+            // onClick: function (index) {
+            //     //let the algorithm do his job
+            //     // console.log(locations[index].id);
+            //     console.log(index);
+            //
+            //     console.log('targetid = ' + event.target.id);
+            //     console.log("event id = " + event.currentTarget.id);
+            //     let targetId = event.currentTarget.id;
+            //
+            //
+            //     let para = document.querySelector('.locations');
+            //     console.log("para = " + para);
+            //     let elemtentPosition = document.getElementById('locations').style.left;
+            //     console.log('element position = ' + elemtentPosition);
+            //     slide(elemtentPosition);
+            // }
         },
         data: function () {
             return {
@@ -78,6 +80,8 @@
             }
         }
     }
+
+
 
 </script>
 
@@ -93,5 +97,6 @@
     .google-map{
         margin-top: 60px;
     }
+
 
 </style>

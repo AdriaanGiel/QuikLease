@@ -1,72 +1,76 @@
 <template>
-    <div class="locations_holder">
-        <ul id="locations" class="clearfix">
-            <li class="float-left custom-list-item-holder custom-list-item">
-                <ul>
-                    <li class="custom-list-item">1.1</li>
-                    <li class="custom-list-item">1.2</li>
-                    <li class="custom-list-item">1.3</li>
-                </ul>
-            </li>
-            <li class="float-left custom-list-item-holder custom-list-item">
-                <ul>
-                    <li class="custom-list-item">2.1</li>
-                    <li class="custom-list-item">2.2</li>
-                    <li class="custom-list-item">2.3</li>
-                </ul>
-            </li>
-            <li class="float-left custom-list-item-holder custom-list-item">
-                <ul>
-                    <li class="custom-list-item">3.1</li>
-                    <li class="custom-list-item">3.2</li>
-                    <li class="custom-list-item">3.3</li>
-                </ul>
-            </li>
-        </ul>
-        <!--<ul id="locations">-->
+
+        <div id="locations_holder" class="locations_holder" v-on:click="onClick()">
+
+            <ul id="locations" class="clearfix locations">
+                <li class="float-left custom-list-item-holder custom-list-item" v-for="(locations, index) in newarray">
+                    <!--<div>{{ index }}</div>-->
+                    <ul class="location" v-for="(location, index) in locations" @click="onClick(index)">
+                        <li class="custom-list-item name" v-text="location.name"></li>
+                        <li class="custom-list-item type" v-text="location.type"></li>
+                        <li class="custom-list-item amount" v-text="location.amount"></li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="arrow point-left">
+                <IconBase width="100%" height="100%" viewBox="0 0 803 903" icon-name="arrow-left"><Arrowleft></Arrowleft></IconBase>
+            </div>
+            <div class="arrow point-right">
+                <IconBase width="100%" height="100%" viewBox="0 0 803 903" icon-name="arrow-right"><Arrowright></Arrowright></IconBase>
+            </div>
+            <!--<div style="-->
+            <!--position: absolute;-->
+            <!--bottom: 0px;-->
+            <!--" class="click-button" v-on:click="onClick">-->
+            <!--verder-->
+            <!--</div>-->
+            <!--<ul id="locations">-->
             <!--<li class="custom-list-item" v-for="(location, index) in locations" @click="onClick(index)" v-bind:id="location.id">-->
-                <!--<div :key="index">-->
-                    <!--<div class="location-name clearfix">-->
-                        <!--&lt;!&ndash;<div>{{ location.id }}</div>&ndash;&gt;-->
-                        <!--&lt;!&ndash;<div>{{ index }}</div>&ndash;&gt;-->
-                        <!--<div class="name"> {{ location.name }}</div>-->
-                        <!--<div class="arrow">&ndash;&gt;</div>-->
-                    <!--</div>-->
-                    <!--<div class="location-type"> {{ location.type }}</div>-->
-                    <!--<div class="bicycle-amount">{{ location.amount }}</div>-->
-                <!--</div>-->
+            <!--<div :key="index">-->
+            <!--<div class="location-name clearfix">-->
+            <!--&lt;!&ndash;<div>{{ location.id }}</div>&ndash;&gt;-->
+            <!--&lt;!&ndash;<div>{{ index }}</div>&ndash;&gt;-->
+            <!--<div class="name"> {{ location.name }}</div>-->
+            <!--<div class="arrow">&ndash;&gt;</div>-->
+            <!--</div>-->
+            <!--<div class="location-type"> {{ location.type }}</div>-->
+            <!--<div class="bicycle-amount">{{ location.amount }}</div>-->
+            <!--</div>-->
             <!--</li>-->
-        <!--</ul>-->
-        <!--<ul>-->
+            <!--</ul>-->
+            <!--<ul>-->
             <!--<li class="custom-list-item" v-for="(location, index) in locations" @click="onClick(index)" v-bind:id="location.id">-->
-                <!--<div :key="index">-->
-                    <!--<div class="location-name clearfix">-->
-                        <!--&lt;!&ndash;<div>{{ location.id }}</div>&ndash;&gt;-->
-                        <!--&lt;!&ndash;<div>{{ index }}</div>&ndash;&gt;-->
-                        <!--<div class="name"> {{ location.name }}</div>-->
-                        <!--<div class="arrow">&ndash;&gt;</div>-->
-                    <!--</div>-->
-                    <!--<div class="location-type"> {{ location.type }}</div>-->
-                    <!--<div class="bicycle-amount">{{ location.amount }}</div>-->
-                <!--</div>-->
+            <!--<div :key="index">-->
+            <!--<div class="location-name clearfix">-->
+            <!--&lt;!&ndash;<div>{{ location.id }}</div>&ndash;&gt;-->
+            <!--&lt;!&ndash;<div>{{ index }}</div>&ndash;&gt;-->
+            <!--<div class="name"> {{ location.name }}</div>-->
+            <!--<div class="arrow">&ndash;&gt;</div>-->
+            <!--</div>-->
+            <!--<div class="location-type"> {{ location.type }}</div>-->
+            <!--<div class="bicycle-amount">{{ location.amount }}</div>-->
+            <!--</div>-->
             <!--</li>-->
-        <!--</ul>-->
-    </div>
+            <!--</ul>-->
+        </div>
 </template>
 
 <script>
-    import * as Vue from "vue";
+    import IconBase from "../components/IconBase";
 
-    // import Logo from '../components/icons/Logo'
+    import Arrowleft from '../components/icons/arrow-left'
+    import Arrowright from '../components/icons/arrow-right'
 
     export default {
         name: "locations_holder",
-        components: { },
+        components: {IconBase, Arrowleft, Arrowright},
+        props: ["classname"],
         data: function () {
             return {
+                newarray: [],
                 locations: [{
                         id: "1",
-                        name: "Wijhaven",
+                        name: "Wijnhaven",
                         type: "Hogeschool locatie",
                         amount: "15 fietsen ophalen"
                     },
@@ -83,47 +87,127 @@
                         amount: "60 fietsen brengen"
                     },{
                         id: "4",
-                        name: "Wijhaven",
+                        name: "Wijnhaven",
                         type: "Hogeschool locatie",
-                        amount: "15 fietsen ophalen"
+                        amount: "13 fietsen ophalen"
                     },{
                         id: "5",
-                        name: "Wijhaven",
+                        name: "Museumpark",
                         type: "Hogeschool locatie",
-                        amount: "15 fietsen ophalen"
+                        amount: "12 fietsen ophalen"
                     },{
-                        id: "5",
-                        name: "Wijhaven",
+                        id: "6",
+                        name: "Wijnhaven",
                         type: "Hogeschool locatie",
-                        amount: "15 fietsen ophalen"
+                        amount: "28 fietsen ophalen"
                     },{
-                        id: "5",
-                        name: "Wijhaven",
+                        id: "7",
+                        name: "Wijnhaven",
                         type: "Hogeschool locatie",
-                        amount: "15 fietsen ophalen"
+                        amount: "6 fietsen ophalen"
                     },{
-                        id: "5",
-                        name: "Wijhaven",
+                        id: "8",
+                        name: "Museumpark",
                         type: "Hogeschool locatie",
-                        amount: "15 fietsen ophalen"
+                        amount: "17 fietsen ophalen"
                     }
                 ]
             }
         },
+        computed: {
+        },
+        mounted() {
+            this.getLocations();
+            // this.$el.children[0].style.left = "-311px";
+            // console.log(this.$el.children[0].style.left);
+        },
         methods: {
+            getLocations(){
+                var i,j,temparray,chunk = 3;
+                for (i=0,j=this.locations.length; i<j; i+=chunk) {
+                    temparray = this.locations.slice(i,i+chunk);
+                    // do whatever
+                    this.newarray.push(temparray)
+                }
+
+            },
             onClick: function (index) {
-                //let the algorithm do his job
-                // console.log(locations[index].id);
-                console.log(event.currentTarget.id)
-                document.getElementById('id1').style.color = 'red'
+
+                let position = this.$el.children[0].offsetLeft;
+                let element = this.$el.children[0];
+
+                // console.log(element);
+                // console.log(position);
+
+                // //let the algorithm do his job
+                // // console.log(locations[index].id);
+                // console.log(index);
+                //
+                // console.log(this);
+                //
+                // console.log('targetid = ' + event.target.id);
+                // console.log("event id = " + event.currentTarget.id);
+                // let targetId = event.currentTarget.id;
+                //
+                //
+                // let para = document.querySelector('.locations');
+                // console.log("para = " + para);
+                // let locations = document.getElementById('locations');
+                // console.log("locations = "+ locations);
+                //
+                //
+                // let postion = locations.style.left = "-311px";
+                //
+                // console.log('postion = ' + postion);
+
+
+                // console.log('element position = ' + elemtentPosition);
+                slide(element, position);
             }
         }
     }
+
+    function slide(el, position) {
+        let element = el;
+        console.log('el', el);
+        let oldpos = position;
+        console.log("oldpos",oldpos);
+        // console.log(position);
+        // element.style.left = position + 100 +"px";
+
+        element.style.setProperty('left', position - 156 + "px");
+
+        element.style.setProperty('--currentX', oldpos + "px");
+
+        element.style.setProperty('--nextX', position - 156 + "px");
+        // console.log(element);
+
+        //
+        // document.getElementById('locations').className ='example';
+        // document.querySelector('.locations').style.setProperty('--m',position + 100);
+    }
+
+
 
 </script>
 
 
 <style scoped>
+
+    .locations {
+        animation-duration: 2s;
+        --currentX: 0px;
+        --nextX: 0px;
+        animation-name: slidein;
+    }
+
+    @keyframes slidein {
+
+        from {left: var(--currentX);}
+        to {left: var(--nextX);}
+
+    }
+
     .locations_holder {
         /*float: right;*/
         /*width: 90%;*/
@@ -136,6 +220,21 @@
         height: 400px;
     }
 
+    .location{
+        padding: 4% 8%;
+    }
+    .location >>> .name{
+        font-size: 30px;
+    }
+    .location >>> .type{
+        font-size: 18px;
+        border-bottom: 1px solid grey;
+    }
+    .location >>> .amount{
+        font-size: 18px;
+        padding: 14px 0px 0px 0px;
+    }
+
     .click-button{
 
     }
@@ -146,12 +245,8 @@
     }
     .custom-list-item-holder{
         /*position: absolute;*/
-        width: 200px;
+        width: 313px;
         float: left ;
-    }
-
-    .float-left ul{
-        padding-left: 0px;
     }
 
     #locations{
@@ -162,6 +257,7 @@
         position: absolute;
     }
 
+
     #locations li:nth-child(2){
         left: 200px;
     }
@@ -170,23 +266,17 @@
         left: 400px;
     }
 
-    .location-name >>> .name {
-        float: left;
-        font-size: 22px;
+    .arrow{
+        width: 50px;
+        position: absolute;
+        top: 170px;
     }
-    .location-name >>> .arrow {
-        float: right;
+    .point-left{
+        left: -6px;
     }
-    .location-type {
-        color: grey;
-        border-bottom: 1px solid black;
-    }
-    .bicycle-amount{
-        margin-top: 10px;
+    .point-right{
+        right: -6px;
     }
 
-    ul li:nth-child(3n+4) {
-        color: red;
-        /*float: right;*/
-    }
+
 </style>

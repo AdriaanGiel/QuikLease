@@ -5,8 +5,6 @@
 </template>
 
 <script>
-    // import leaseplanButtonOrange from '../../components/buttons/leaseplanButtonOrange';
-
     import IconBase from "../components/IconBase";
     import Logo from '../components/icons/Logo'
 
