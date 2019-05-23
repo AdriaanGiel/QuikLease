@@ -2008,6 +2008,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -2146,7 +2151,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.background[data-v-780e8960] {\n    height: 100vh;\n    width: 100vw;\n    background-color: black;\n    -webkit-animation-name: colorchangebw-data-v-780e8960;\n            animation-name: colorchangebw-data-v-780e8960;\n    -webkit-animation-delay: 1.5s;\n            animation-delay: 1.5s;\n    -webkit-animation-duration: 2s;\n            animation-duration: 2s;\n    -webkit-animation-iteration-count: 1;\n            animation-iteration-count: 1;\n    -webkit-animation-fill-mode: forwards;\n            animation-fill-mode: forwards;\n}\n.container[data-v-780e8960] {\n   \n    height: inherit;\n    width: inherit;\n    margin: auto auto;\n}\n.logincircle[data-v-780e8960] {\n    height: 45vh;\n    width: 45vh;\n    border-radius: 100%;\n    background-color: white;\n    position: absolute;\n    top: calc(50% - 22.5vh);\n    left: calc(50% - 22.5vh);\n    -webkit-transform: translateX(-50%) translateY(-50%);\n    transform: translateX(-50%) translateY(-50%);\n    -webkit-animation-name: introcircle-data-v-780e8960;\n            animation-name: introcircle-data-v-780e8960;\n    -webkit-animation-duration: 3s;\n            animation-duration: 3s;\n    -webkit-animation-iteration-count: 1;\n            animation-iteration-count: 1;\n    -webkit-animation-fill-mode: forwards;\n            animation-fill-mode: forwards;\n}\n.logo[data-v-780e8960] {\n    position: absolute;\n    left: 33%;\n    top: 33%;\n    height: 33%;\n    width: 33%;\n    margin: auto auto;\n}\n@-webkit-keyframes introcircle-data-v-780e8960 {\n0% {\n        -webkit-transform: scale(0.1);\n                transform: scale(0.1);\n        display: block;\n}\n30% {\n        -webkit-transform: scale(1);\n                transform: scale(1);\n}\n60% {\n        -webkit-transform: scale(1);\n                transform: scale(1);\n}\n99% {\n        -webkit-transform: scale(5);\n                transform: scale(5);\n}\n100% {\n        -webkit-transform: scale(5);\n                transform: scale(5);\n        display: none;\n}\n}\n@keyframes introcircle-data-v-780e8960 {\n0% {\n        -webkit-transform: scale(0.1);\n                transform: scale(0.1);\n        display: block;\n}\n30% {\n        -webkit-transform: scale(1);\n                transform: scale(1);\n}\n60% {\n        -webkit-transform: scale(1);\n                transform: scale(1);\n}\n99% {\n        -webkit-transform: scale(5);\n                transform: scale(5);\n}\n100% {\n        -webkit-transform: scale(5);\n                transform: scale(5);\n        display: none;\n}\n}\n@-webkit-keyframes colorchangebw-data-v-780e8960 {\nfrom {\n        background-color: black;\n}\nto {\n        background-color: white;\n}\n}\n@keyframes colorchangebw-data-v-780e8960 {\nfrom {\n        background-color: black;\n}\nto {\n        background-color: white;\n}\n}\n", ""]);
+exports.push([module.i, "\n.background[data-v-780e8960] {\n    height: 100vh;\n    width: 100vw;\n    background-color: black;\n    -webkit-animation-name: colorchangebw-data-v-780e8960;\n            animation-name: colorchangebw-data-v-780e8960;\n    -webkit-animation-delay: 1.5s;\n            animation-delay: 1.5s;\n    -webkit-animation-duration: 2s;\n            animation-duration: 2s;\n    -webkit-animation-iteration-count: 1;\n            animation-iteration-count: 1;\n    -webkit-animation-fill-mode: forwards;\n            animation-fill-mode: forwards;\n}\n.container[data-v-780e8960] {\n    height: inherit;\n    width: inherit;\n    margin: auto auto;\n}\n.logincircle[data-v-780e8960] {\n    height: 45vh;\n    width: 45vh;\n    border-radius: 100%;\n    background-color: white;\n    position: absolute;\n    top: calc(50% - 22.5vh);\n    left: calc(50% - 22.5vh);\n    -webkit-transform: translateX(-50%) translateY(-50%);\n    transform: translateX(-50%) translateY(-50%);\n    -webkit-animation-name: introcircle-data-v-780e8960;\n            animation-name: introcircle-data-v-780e8960;\n    -webkit-animation-duration: 3s;\n            animation-duration: 3s;\n    -webkit-animation-iteration-count: 1;\n            animation-iteration-count: 1;\n    -webkit-animation-fill-mode: forwards;\n            animation-fill-mode: forwards;\n}\n.logo[data-v-780e8960] {\n    position: absolute;\n    left: 33%;\n    top: 33%;\n    height: 33%;\n    width: 33%;\n    margin: auto auto;\n    -webkit-animation-name: toplogo-data-v-780e8960;\n            animation-name: toplogo-data-v-780e8960;\n    -webkit-animation-duration: 1s;\n            animation-duration: 1s;\n    -webkit-animation-delay: 3s;\n            animation-delay: 3s;\n    -webkit-animation-iteration-count: 1;\n            animation-iteration-count: 1;\n    -webkit-animation-fill-mode: forwards;\n            animation-fill-mode: forwards;\n}\n.login[data-v-780e8960] {\n    position: absolute;\n    left: 33%;\n    top: 33%;\n    height: 33%;\n    width: 33%;\n    margin: auto auto;\n}\n@-webkit-keyframes toplogo-data-v-780e8960 {\n0% {\n        -webkit-transform: translateY(0) scale(1);\n                transform: translateY(0) scale(1);\n}\n100% {\n        -webkit-transform: translateY(-110%) scale(0.3);\n                transform: translateY(-110%) scale(0.3);\n}\n}\n@keyframes toplogo-data-v-780e8960 {\n0% {\n        -webkit-transform: translateY(0) scale(1);\n                transform: translateY(0) scale(1);\n}\n100% {\n        -webkit-transform: translateY(-110%) scale(0.3);\n                transform: translateY(-110%) scale(0.3);\n}\n}\n@-webkit-keyframes introcircle-data-v-780e8960 {\n0% {\n        -webkit-transform: scale(0.1);\n                transform: scale(0.1);\n        display: block;\n}\n30% {\n        -webkit-transform: scale(1);\n                transform: scale(1);\n}\n60% {\n        -webkit-transform: scale(1);\n                transform: scale(1);\n}\n99% {\n        -webkit-transform: scale(5);\n                transform: scale(5);\n}\n100% {\n        -webkit-transform: scale(5);\n                transform: scale(5);\n        display: none;\n}\n}\n@keyframes introcircle-data-v-780e8960 {\n0% {\n        -webkit-transform: scale(0.1);\n                transform: scale(0.1);\n        display: block;\n}\n30% {\n        -webkit-transform: scale(1);\n                transform: scale(1);\n}\n60% {\n        -webkit-transform: scale(1);\n                transform: scale(1);\n}\n99% {\n        -webkit-transform: scale(5);\n                transform: scale(5);\n}\n100% {\n        -webkit-transform: scale(5);\n                transform: scale(5);\n        display: none;\n}\n}\n@-webkit-keyframes colorchangebw-data-v-780e8960 {\nfrom {\n        background-color: black;\n}\nto {\n        background-color: white;\n}\n}\n@keyframes colorchangebw-data-v-780e8960 {\nfrom {\n        background-color: black;\n}\nto {\n        background-color: white;\n}\n}\n", ""]);
 
 // exports
 
@@ -9077,11 +9082,22 @@ var render = function() {
           )
         ],
         1
-      )
+      ),
+      _vm._v(" "),
+      _vm._m(0)
     ])
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "login" }, [
+      _c("form", { attrs: { action: "/", method: "post" } })
+    ])
+  }
+]
 render._withStripped = true
 
 

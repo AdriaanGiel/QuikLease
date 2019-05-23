@@ -15,13 +15,15 @@ body{
 }
 
 g#fleet {
-    animation-name: move;
+    transform: translateX(-500%);
+    animation-name: movefleet;
     animation-duration: 0.5s;
+    animation-delay: 0.5s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
 }
 
-@keyframes move {
+@keyframes movefleet {
     from {
         transform: translateX(-500%);
     }

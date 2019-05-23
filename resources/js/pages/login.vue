@@ -6,6 +6,13 @@
             <div class="logo">
                 <IconBase x="0px" y="0px" width="100%" height="100%" viewBox="0 0 803 903" icon="Logo"><Logo class="logosvg"></Logo></IconBase>
             </div>
+            <div class="login">
+                <form action="/" method="post">
+                    <input type="text" id="login" name="login" placeholder="login">
+                    <input type="text" id="password" name="login" placeholder="password">
+                    <input type="submit">
+                </form>
+            </div>
         </div>
     </div>
 </template>
@@ -35,7 +42,6 @@
     }
 
     .container {
-       
         height: inherit;
         width: inherit;
         margin: auto auto;
@@ -65,6 +71,49 @@
         height: 33%;
         width: 33%;
         margin: auto auto;
+        animation-name: logototop;
+        animation-duration: 1s;
+        animation-delay: 3s;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+    }
+
+    .login {
+        position: absolute;
+        left: 33%;
+        top: 33%;
+        height: 33%;
+        width: 33%;
+        margin: auto auto;
+        display: none;
+        animation-name: loginfadein;
+        animation-duration: 1s;
+        animation-delay: 4s;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+    }
+
+    @keyframes loginfadein {
+        0% {
+            opacity: 0;
+            transform: translateY(-10);
+            display:block;
+        }
+
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes logototop {
+        0% {
+            transform: translateY(0) scale(1);
+        }
+
+        100% {
+            transform: translateY(-110%) scale(0.3);
+        }
     }
 
     @keyframes introcircle {
