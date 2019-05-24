@@ -26,6 +26,7 @@
     "faker": "^4.1.0",
     "http-errors": "~1.6.2",
     "laravel-mix": "^4.0.15",
+    "moment": "^2.24.0",
     "morgan": "~1.9.0",
     "pug": "2.0.0-beta11",
     "sequelize": "^5.7.5",
