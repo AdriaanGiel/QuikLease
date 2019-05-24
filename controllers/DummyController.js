@@ -1,4 +1,4 @@
-let {History,BikeRack, Bike, School} = require("../database");
+let {History,BikeRack, Bike, School, Profile} = require("../database");
 
 module.exports = {
     async index(req,res){
@@ -11,6 +11,8 @@ module.exports = {
                     include:[{model:History,
                         include: [{model:Bike, where:{active: 0}}]
                     }]
+                },{
+                    model:Profile
                 }]
             });
 
@@ -25,6 +27,7 @@ module.exports = {
                 data.push({
                     school_id: school.id,
                     school_name: school.name,
+                    student_amount: school.profiles.length,
                     timestamp: Date.now(),
                     total_bikes: school.bikes_total,
                     current_bikes: school.BikeRacks.map((rack) => {return rack.id }),

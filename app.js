@@ -1,10 +1,14 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+let createError = require('http-errors');
+let express = require('express');
+let path = require('path');
+let cookieParser = require('cookie-parser');
+let logger = require('morgan');
 let {sequelize} = require('./database');
 let {second_sequelize} = require('./ai_database');
+let bodyParser = require('body-parser');
+let passport = require('passport');
+let session = require('express-session');
+let flash = require("connect-flash");
 
 async function startDatabase(){
   return await sequelize.sync();
@@ -17,11 +21,13 @@ async function startAIDatabase(){
 startDatabase();
 startAIDatabase();
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+let authRouter = require('./routes/auth');
+let indexRouter = require('./routes/index');
+let usersRouter = require('./routes/users');
 
 var app = express();
 
+require("./passport");
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -31,10 +37,21 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(session({ secret: "fleet" }));
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(flash());
+
+// support parsing of application/json type post data
+app.use(bodyParser.json());
+
+//support parsing of application/x-www-form-urlencoded post data
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/auth', authRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
