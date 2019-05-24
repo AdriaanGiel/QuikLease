@@ -2,18 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9fd98d04-d59c-4c25-9a65-8475256fcbdc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/controllers/BikeController.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/SchoolController.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/helpers/ErrorHandler.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routes/bikes.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routes/schools.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cors.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/seed/bike_seed.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/seed/history_seed.js" beforeDir="false" afterPath="$PROJECT_DIR$/seed/history_seed.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/seed/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/seed/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/seed/school_seed.js" beforeDir="false" afterPath="$PROJECT_DIR$/seed/school_seed.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/bikes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/bikes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/schools.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/schools.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/users.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -93,7 +87,7 @@
           <entry key="env_example" value="2" />
           <entry key="gitignore" value="4" />
           <entry key="histories" value="7" />
-          <entry key="js" value="189" />
+          <entry key="js" value="191" />
           <entry key="json" value="4" />
           <entry key="md" value="1" />
           <entry key="profiles" value="4" />
@@ -114,7 +108,7 @@
           <entry key="Git file" value="4" />
           <entry key="JSON" value="4" />
           <entry key="Jade" value="3" />
-          <entry key="JavaScript" value="194" />
+          <entry key="JavaScript" value="196" />
           <entry key="Markdown" value="1" />
           <entry key="PLAIN_TEXT" value="5" />
           <entry key="UML" value="1" />
@@ -127,12 +121,12 @@
           <entry key="env" value="203" />
           <entry key="env_example" value="59" />
           <entry key="gitignore" value="31" />
-          <entry key="js" value="8106" />
+          <entry key="js" value="8326" />
           <entry key="json" value="46" />
           <entry key="md" value="146" />
           <entry key="pug" value="105" />
           <entry key="scss" value="23" />
-          <entry key="txt" value="565" />
+          <entry key="txt" value="658" />
           <entry key="vue" value="10" />
           <entry key="www" value="1" />
         </counts>
@@ -144,9 +138,9 @@
           <entry key="Git file" value="31" />
           <entry key="JSON" value="46" />
           <entry key="Jade" value="103" />
-          <entry key="JavaScript" value="8107" />
+          <entry key="JavaScript" value="8327" />
           <entry key="Markdown" value="146" />
-          <entry key="PLAIN_TEXT" value="626" />
+          <entry key="PLAIN_TEXT" value="719" />
           <entry key="SCSS" value="23" />
           <entry key="Vue.js" value="10" />
         </counts>
@@ -161,15 +155,6 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/seed/school_seed.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="457">
-              <caret line="44" column="91" selection-start-line="44" selection-start-column="91" selection-end-line="44" selection-end-column="91" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controllers/BikeController.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="348">
@@ -181,8 +166,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/bikes.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="40" selection-start-line="6" selection-start-column="40" selection-end-line="6" selection-end-column="40" />
+            <state relative-caret-position="68">
+              <caret line="4" selection-start-line="4" selection-end-line="14" selection-end-column="3" />
             </state>
           </provider>
         </entry>
@@ -190,8 +175,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/schools.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret selection-end-line="8" selection-end-column="24" />
+            <state relative-caret-position="187">
+              <caret line="11" column="27" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
             </state>
           </provider>
         </entry>
@@ -199,8 +184,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/users.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret selection-end-line="7" selection-end-column="24" />
+            <state relative-caret-position="136">
+              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routes/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cors.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
             </state>
           </provider>
         </entry>
@@ -217,8 +220,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="127">
-              <caret line="9" column="30" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
+            <state relative-caret-position="202">
+              <caret line="30" column="34" lean-forward="true" selection-start-line="30" selection-start-column="34" selection-end-line="30" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -233,15 +236,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="85">
               <caret line="5" column="27" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/seed/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="29" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -268,7 +262,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/views/index.pug" />
         <option value="$PROJECT_DIR$/resources/js/main.js" />
         <option value="$PROJECT_DIR$/resources/styles/main.css" />
         <option value="$PROJECT_DIR$/views/layout.pug" />
@@ -296,7 +289,6 @@
         <option value="$PROJECT_DIR$/seed/ai_seed.js" />
         <option value="$PROJECT_DIR$/seed/ai_user_seed.js" />
         <option value="$PROJECT_DIR$/seed/bike_rack_seed.js" />
-        <option value="$PROJECT_DIR$/routes/users.js" />
         <option value="$PROJECT_DIR$/controllers/DummyController.js" />
         <option value="$PROJECT_DIR$/database/History.js" />
         <option value="$PROJECT_DIR$/seed/user_seed.js" />
@@ -313,10 +305,13 @@
         <option value="$PROJECT_DIR$/seed/school_seed.js" />
         <option value="$PROJECT_DIR$/controllers/LocationController.js" />
         <option value="$PROJECT_DIR$/helpers/tryCatchHandler.js" />
-        <option value="$PROJECT_DIR$/routes/schools.js" />
-        <option value="$PROJECT_DIR$/routes/bikes.js" />
         <option value="$PROJECT_DIR$/controllers/BikeController.js" />
         <option value="$PROJECT_DIR$/controllers/SchoolController.js" />
+        <option value="$PROJECT_DIR$/routes/bikes.js" />
+        <option value="$PROJECT_DIR$/routes/schools.js" />
+        <option value="$PROJECT_DIR$/routes/users.js" />
+        <option value="$PROJECT_DIR$/routes/index.js" />
+        <option value="$PROJECT_DIR$/cors.js" />
         <option value="$PROJECT_DIR$/app.js" />
       </list>
     </option>
@@ -344,8 +339,8 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="831" />
-    <option name="y" value="54" />
+    <option name="x" value="750" />
+    <option name="y" value="50" />
     <option name="width" value="1097" />
     <option name="height" value="990" />
   </component>
@@ -363,16 +358,6 @@
             <path>
               <item name="quiklease" type="b2602c69:ProjectViewProjectNode" />
               <item name="quiklease" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="quiklease" type="b2602c69:ProjectViewProjectNode" />
-              <item name="quiklease" type="462c0819:PsiDirectoryNode" />
-              <item name="controllers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="quiklease" type="b2602c69:ProjectViewProjectNode" />
-              <item name="quiklease" type="462c0819:PsiDirectoryNode" />
-              <item name="routes" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="quiklease" type="b2602c69:ProjectViewProjectNode" />
@@ -479,21 +464,28 @@
       <option name="project" value="LOCAL" />
       <updated>1557393737799</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="- Added Controllers for bikes and schools &#10;- Added Routes for bikes and schools">
+      <created>1558736475415</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1558736475415</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="50782000" />
+    <option name="totallyTimeSpent" value="51555000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="831" y="54" width="1097" height="990" extended-state="0" />
+    <frame x="478" y="8" width="1097" height="990" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
       <window_info id="npm" order="1" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="2" visible="true" weight="0.268081" />
+      <window_info active="true" content_ui="combo" id="Project" order="2" visible="true" weight="0.268081" />
       <window_info id="Structure" order="3" side_tool="true" weight="0.25" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="0" sideWeight="0.4996145" visible="true" weight="0.35864487" />
+      <window_info anchor="bottom" id="Terminal" order="0" sideWeight="0.4996145" visible="true" weight="0.35864487" />
       <window_info anchor="bottom" id="Database Changes" order="1" />
       <window_info anchor="bottom" id="Event Log" order="2" sideWeight="0.5003855" side_tool="true" weight="0.24206349" />
       <window_info anchor="bottom" id="Version Control" order="3" show_stripe_button="false" />
@@ -550,19 +542,10 @@
     <MESSAGE value="- Added seeders for &#10;schools, bikes, users and history&#10;&#10;changed some stuff in the database" />
     <MESSAGE value="- Added second database for AI data&#10;- Added bike racks to tables&#10;- changed seeds to include bikeracks&#10;&#10;TODO&#10;Fix associations models" />
     <MESSAGE value="- fixed associations&#10;- all data is inserted correctly" />
-    <option name="LAST_COMMIT_MESSAGE" value="- fixed associations&#10;- all data is inserted correctly" />
+    <MESSAGE value="- Added Controllers for bikes and schools &#10;- Added Routes for bikes and schools" />
+    <option name="LAST_COMMIT_MESSAGE" value="- Added Controllers for bikes and schools &#10;- Added Routes for bikes and schools" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="323">
-            <caret line="19" column="3" selection-start-line="19" selection-start-column="3" selection-end-line="19" selection-end-column="3" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/js/routes/routes.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -707,13 +690,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/seed/ai_seed.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -855,27 +831,6 @@
     <entry file="file://$PROJECT_DIR$/helpers/ErrorHandler.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/users.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="7" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/schools.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="8" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/bikes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="40" selection-start-line="6" selection-start-column="40" selection-end-line="6" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/controllers/BikeController.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="348">
@@ -890,10 +845,45 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/routes/bikes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" selection-start-line="4" selection-end-line="14" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/schools.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="27" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/users.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cors.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="127">
-          <caret line="9" column="30" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
+        <state relative-caret-position="202">
+          <caret line="30" column="34" lean-forward="true" selection-start-line="30" selection-start-column="34" selection-end-line="30" selection-end-column="34" />
         </state>
       </provider>
     </entry>

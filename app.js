@@ -1,8 +1,10 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+const createError = require('http-errors');
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
+const cors = require("./cors");
+const app = express();
 let {sequelize} = require('./database');
 let {second_sequelize} = require('./ai_database');
 
@@ -17,12 +19,12 @@ async function startAIDatabase(){
 startDatabase();
 startAIDatabase();
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-var bikesRouter = require('./routes/bikes');
-var SchoolsRouter = require('./routes/schools');
+const indexRouter = require('./routes/index');
+const usersRouter = require('./routes/users');
+const bikesRouter = require('./routes/bikes');
+const SchoolsRouter = require('./routes/schools');
 
-var app = express();
+cors.setupCorsConfig(app);
 
 
 // view engine setup
