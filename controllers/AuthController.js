@@ -1,9 +1,22 @@
-const Nexmo = require('../nexmo');
+const nexmo = require('../nexmo');
+const jwt = require('jsonwebtoken');
 
 class AuthController{
     // Controller methods
     async login(req,res) {
 
+        let data = req.body;
+        let user = await User.findOne({where:{username:data.username}});
+
+        if(!user){
+            return res.json({error:"error"})
+        }
+
+        if(user.comparePassword(data.password)){
+            let token = await jwt.sign({user},'secretStuff');
+
+            return res.json({token: token});
+        }
         
         return res.json(req.session)
     }
@@ -43,18 +56,21 @@ class AuthController{
     }
 
     async logout(req,res){
-        try {
-            let destroyed = await req.session.destroy();
-            return res.redirect("/auth/login")
-        }catch (e) {
-            return res.json(e);
-        }
+        let ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+        console.log(ip);
+
+        // try {
+        //     let destroyed = await req.session.destroy();
+        //     return res.redirect("/auth/login")
+        // }catch (e) {
+        //     return res.json(e);
+        // }
     }
 
     // Static Nexpo methods
     static async verify(number) {
         return new Promise(function (resolve, reject) {
-            Nexmo.verify.request({
+            nexmo.verify.request({
                 number: number,
                 brand: "QuickLease"
             }, (err, result) => {
@@ -70,7 +86,7 @@ class AuthController{
 
     static async check(reqId, code) {
         return new Promise(function(resolve, reject) {
-            Nexmo.verify.check({
+            nexmo.verify.check({
                 request_id: reqId,
                 code: code
             }, (err, result) => {

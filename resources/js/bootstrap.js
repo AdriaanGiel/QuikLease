@@ -8,4 +8,3 @@ window.axios = require('axios');
 
 Vue.use(VueRouter);
 Vue.use(uiv);
-
