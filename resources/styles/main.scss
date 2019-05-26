@@ -1,5 +1,11 @@
 @import "~bootstrap/dist/css/bootstrap.min.css";
 
+$mdc-theme-primary: #89f0aa;
+$mdc-theme-secondary: #f0899c;
+$mdc-theme-background: #f5f5f5;
+@import "~material-components-vue/dist/theme/styles";
+@import "~material-components-vue/dist/text-field/styles";
+
 body{
     background: white;
 }
