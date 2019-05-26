@@ -1,5 +1,5 @@
 const {History, Bike,User,BikeRack} = require('../database');
-
+const Moment = require('moment');
 async function getAllData()
 {
     let bikes = await Bike.findAll();
@@ -9,7 +9,31 @@ async function getAllData()
 
 
     return {bikes: bikes, users: users, racks: BikeRacks};
+    
+    
 }
+
+
+
+let startDate = Moment("20180101");
+let startHour = 6;
+let endHour = 24;
+
+console.log(startDate.hours(13).minutes(30).format('MMMM Do YYYY, h:mm:ss a'));
+
+for(let i = 0; i < 60; i++){
+
+
+
+
+
+    startDate.add(1,"days");
+    if(i % 6 === 0){
+        startDate.add(1,"days");
+    }
+}
+
+console.log(Moment("20180101").fromNow());
 
 module.exports = {
     run() {
