@@ -1,4 +1,7 @@
+const ErrorHandler = require('../helpers/ErrorHandler');
 const jwt = require('jsonwebtoken');
+const config = require('../config');
+
 module.exports = {
   getToken(req,res,next){
 
@@ -17,14 +20,12 @@ module.exports = {
 
   async verifyToken(req,res,next){
 
-      try{
-          let decoded = await jwt.verify(req.token,'secretStuff');
-
+      ErrorHandler.handleTryAndCatch(async () => {
+          let decoded = await jwt.verify(req.token,config.authentication.jwtSecret);
           req.user = decoded;
+          console.log(decoded);
           return next();
+      },res);
 
-      }catch (e) {
-          return res.sendStatus(403);
-      }
   }
 };

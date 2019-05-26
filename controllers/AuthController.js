@@ -1,33 +1,36 @@
 const nexmo = require('../nexmo');
 const jwt = require('jsonwebtoken');
+const {User} = require('../ai_database');
+const ErrorHandler = require('../helpers/ErrorHandler');
+const config = require('../config');
 
 class AuthController{
     // Controller methods
     async login(req,res) {
 
         let data = req.body;
-        let user = await User.findOne({where:{username:data.username}});
+        let user = await User.findOne({where:{email:data.email}});
 
         if(!user){
             return res.json({error:"error"})
         }
 
         if(user.comparePassword(data.password)){
-            let token = await jwt.sign({user},'secretStuff');
+            let token = await jwt.sign({first:true},config.authentication.jwtSecret);
 
             return res.json({token: token});
         }
         
-        return res.json(req.session)
+        return res.sendStatus(400);
     }
 
     async stepVerification(req,res) {
-        try {
+
+        ErrorHandler.handleTryAndCatch(async () => {
             let result = AuthController.verify(31612630885);
             return res.json({result: result})
-        }catch (e) {
-            return res.json({error: e});
-        }
+        },res);
+
     }
 
     async cancelVerification(req,res){

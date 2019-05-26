@@ -8,9 +8,7 @@ const app = express();
 let {sequelize} = require('./database');
 let {second_sequelize} = require('./ai_database');
 let bodyParser = require('body-parser');
-let passport = require('passport');
-let session = require('express-session');
-let flash = require("connect-flash");
+let globalMiddleware = require('./middleware/globalMiddleware');
 
 async function startDatabase(){
   return await sequelize.sync();
@@ -29,7 +27,9 @@ const usersRouter = require('./routes/users');
 const bikesRouter = require('./routes/bikes');
 const SchoolsRouter = require('./routes/schools');
 
-cors.setupCorsConfig(app);
+
+
+
 
 
 // view engine setup
@@ -51,11 +51,17 @@ app.use(bodyParser.json());
 //support parsing of application/x-www-form-urlencoded post data
 app.use(bodyParser.urlencoded({ extended: true }));
 
+// Show vue pages
 app.use('/', indexRouter);
+
+// Setup cors protection
+cors.setupCorsConfig(app);
+app.use('/auth', authRouter);
+globalMiddleware(app);
 app.use('/users', usersRouter);
 app.use('/bikes', bikesRouter);
 app.use('/Schools', SchoolsRouter);
-app.use('/auth', authRouter);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
