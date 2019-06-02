@@ -1,6 +1,6 @@
 <template>
     <div v-on:click="onClick" class="leaseplanButton">
-        <div>{{ text }}</div>
+        <div class="leaseplanButton-label">{{ text }}</div>
         <div class="icon-holder">
                 <IconBase width="70%" height="60%" viewBox="0 0 500 500" icon-name="location"><Location :is="child_component"></Location></IconBase>
         </div>
@@ -38,9 +38,9 @@
 </script>
 
 <style scoped>
+
     .leaseplanButton{
         width: 46%;
-        height: 201px;
         background-color: #fe8d12;
         box-shadow: grey 3px 3px;
         -webkit-border-radius: 6px;
@@ -49,22 +49,18 @@
         position: relative;
         float: left;
     }
-
-
-    .leaseplanButton >>> div{
+    .leaseplanButton .leaseplanButton-label{
         font-size: 20px;
         font-weight: bold;
         font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
         color: white;
         width: 100%;
         text-align: center;
-        position: absolute;
-        top: 12%;
+        margin: 5% 0px;
     }
 
     .icon-holder{
-        padding: 20% 13%;
+        padding: 10% 15% 20% 15%;
         text-align: center;
-        /*margin-top: 20%;*/
     }
 </style>

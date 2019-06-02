@@ -1,6 +1,8 @@
 import VueRouter from 'vue-router';
 import login from '../pages/login';
 import dashboard from '../pages/dashboard';
+import location_detail from '../pages/location_detail';
+import locations_overview from '../pages/locations_overview';
 
 
 let routes = [
@@ -23,6 +25,28 @@ let routes = [
             metaTags: [
                 { name: "description", content: "dashboard" },
                 { property: "og:description", content: "dashboard" }
+            ]
+        }
+    },
+    {
+        path: '/location',
+        component: location_detail,
+        meta: {
+            title: "Quiklease - location",
+            metaTags: [
+                { name: "description", content: "location" },
+                { property: "og:description", content: "location" }
+            ]
+        }
+    },
+    {
+        path: '/locations',
+        component: locations_overview,
+        meta: {
+            title: "Quiklease - locations",
+            metaTags: [
+                { name: "description", content: "locations" },
+                { property: "og:description", content: "locations" }
             ]
         }
     },

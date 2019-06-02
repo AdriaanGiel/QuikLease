@@ -1,10 +1,7 @@
 <template>
-
         <div id="locations_holder" class="locations_holder" v-on:click="onClick()">
-
             <ul id="locations" class="clearfix locations">
                 <li class="float-left custom-list-item-holder custom-list-item" v-for="(locations, index) in newarray">
-                    <!--<div>{{ index }}</div>-->
                     <ul class="location" v-for="(location, index) in locations" @click="onClick(index)">
                         <li class="custom-list-item name" v-text="location.name"></li>
                         <li class="custom-list-item type" v-text="location.type"></li>
@@ -18,40 +15,6 @@
             <div class="arrow point-right">
                 <IconBase width="100%" height="100%" viewBox="0 0 803 903" icon-name="arrow-right"><Arrowright></Arrowright></IconBase>
             </div>
-            <!--<div style="-->
-            <!--position: absolute;-->
-            <!--bottom: 0px;-->
-            <!--" class="click-button" v-on:click="onClick">-->
-            <!--verder-->
-            <!--</div>-->
-            <!--<ul id="locations">-->
-            <!--<li class="custom-list-item" v-for="(location, index) in locations" @click="onClick(index)" v-bind:id="location.id">-->
-            <!--<div :key="index">-->
-            <!--<div class="location-name clearfix">-->
-            <!--&lt;!&ndash;<div>{{ location.id }}</div>&ndash;&gt;-->
-            <!--&lt;!&ndash;<div>{{ index }}</div>&ndash;&gt;-->
-            <!--<div class="name"> {{ location.name }}</div>-->
-            <!--<div class="arrow">&ndash;&gt;</div>-->
-            <!--</div>-->
-            <!--<div class="location-type"> {{ location.type }}</div>-->
-            <!--<div class="bicycle-amount">{{ location.amount }}</div>-->
-            <!--</div>-->
-            <!--</li>-->
-            <!--</ul>-->
-            <!--<ul>-->
-            <!--<li class="custom-list-item" v-for="(location, index) in locations" @click="onClick(index)" v-bind:id="location.id">-->
-            <!--<div :key="index">-->
-            <!--<div class="location-name clearfix">-->
-            <!--&lt;!&ndash;<div>{{ location.id }}</div>&ndash;&gt;-->
-            <!--&lt;!&ndash;<div>{{ index }}</div>&ndash;&gt;-->
-            <!--<div class="name"> {{ location.name }}</div>-->
-            <!--<div class="arrow">&ndash;&gt;</div>-->
-            <!--</div>-->
-            <!--<div class="location-type"> {{ location.type }}</div>-->
-            <!--<div class="bicycle-amount">{{ location.amount }}</div>-->
-            <!--</div>-->
-            <!--</li>-->
-            <!--</ul>-->
         </div>
 </template>
 
@@ -202,16 +165,11 @@
     }
 
     @keyframes slidein {
-
         from {left: var(--currentX);}
         to {left: var(--nextX);}
-
     }
 
     .locations_holder {
-        /*float: right;*/
-        /*width: 90%;*/
-        /*width: 400px;*/
         box-shadow: grey 3px 3px;
         margin-left: 12px;
         position: absolute;

@@ -3,7 +3,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-12 col-md-12 col-lg-12">
-                    <CustomHeader></CustomHeader>
+                    <div class="logo-holder logo-spacer">
+                        <iconbase class="logo" width="100%" height="100%" viewBox="0 0 803 903" icon-name="Logo"><logo></logo></iconbase>
+                    </div>
                 </div>
             </div>
             <div class="row">
@@ -17,7 +19,7 @@
                         <div class="col-sm-12 col-md-12 col-lg-12 remove-padding">
                             <div>
                                 <leaseplanButtonOrange class="leaseplanButtonLeft" width="90" height="90" text="Locatie" iconName="Location"></leaseplanButtonOrange>
-                                <leaseplanButtonOrange class="" width="90" height="90" text="Onderhoud" iconName="bicycle"></leaseplanButtonOrange>
+                                <leaseplanButtonOrange class="" width="90" height="90" text="Onderhoud" iconName="bicycle" @mouseover.native="hover = true" @mouseleave.native="hover = false"></leaseplanButtonOrange>
                             </div>
                         </div>
                     </div>
@@ -36,25 +38,33 @@
 
 
 <script>
+    import logo from '../../components/icons/Logo'
+    import iconbase from "../../components/IconBase";
+    import quicklease_nav from "../../components/quicklease-nav";
     import leaseplanButtonOrange from '../../components/buttons/leaseplanButtonOrange';
     import start from '../../components/buttons/start';
     import locations_holder from '../../components/locations_holder';
     import GoogleMap from "../../components/GoogleMap";
-    import CustomHeader from "../../components/Custom-Header";
     import Logout from "../../components/buttons/logout";
+
 
     export default {
         name: "dashboard",
         props: ['url'],
         components:{
+            logo,
+            iconbase,
             leaseplanButtonOrange,
             start,
             GoogleMap,
             locations_holder,
-            CustomHeader,
+            quicklease_nav,
             Logout
         },
         methods: {
+            mouseOver(){
+                console.log("hoi");
+            }
             // onClick: function (index) {
             //     //let the algorithm do his job
             //     // console.log(locations[index].id);
@@ -72,7 +82,7 @@
             //     slide(elemtentPosition);
             // }
         },
-        data: function () {
+        data() {
             return {
                 images:{
                     image: 'https://jp.vuejs.org/images/logo.png'
@@ -86,16 +96,19 @@
 </script>
 
 <style scoped>
-
     .leaseplanButtonLeft{
         margin-right: 30px;
     }
-    .header img{
+    .nav img{
         display: block;
         margin: 0px auto;
     }
     .google-map{
         margin-top: 60px;
+    }
+
+    .logo-spacer{
+        margin: 50px auto;
     }
 
 
