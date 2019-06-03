@@ -6,16 +6,27 @@
             <div class="logo">
                 <IconBase x="0px" y="0px" width="100%" height="100%" viewBox="0 0 803 903" icon="Logo"><Logo class="logosvg"></Logo></IconBase>
             </div>
-            <div class="login">
-                <form action="/" method="post">
-                    <input type="text" id="login" name="login" placeholder="login">
-                    <input type="text" id="password" name="login" placeholder="password">
-                    <input type="submit">
-                </form>
+            <div class="inputs">
+                <div class="loginform" v-show="this.showForm">
+                    <form class="form" action="/" method="post">
+                        <div class="form-group label-placeholder">
+                            <label for="i5p" class="control-label">label-placeholder</label>
+                            <input type="email" class="form-control" id="i5p">
+                            <span class="help-block">This is a hint as a <code>span.help-block.hint</code></span>
+                        </div>
+                        <div class="form-group label-placeholder">
+                            <label for="i5p" class="control-label">label-placeholder</label>
+                            <input type="email" class="form-control" id="i5p">
+                            <span class="help-block">This is a hint as a <code>span.help-block.hint</code></span>
+                        </div>
+                        <input type="submit">
+                    </form>
+                </div>
             </div>
         </div>
     </div>
 </template>
+
 
 <script>
     import IconBase from '../../components/IconBase';
@@ -25,8 +36,21 @@
         components: {
             IconBase,
             Logo
-        }
+        },
+        data(){
+            return {
+                showForm: false
+            }
+        },
+        mounted(){
+            setTimeout(() => {
+                    console.log('in settimeout')
+                this.showForm = true
+                }, 4000);
+        },
+        
     }
+    
 </script>
 
 <style scoped>
@@ -78,14 +102,13 @@
         animation-fill-mode: forwards;
     }
 
-    .login {
+    .loginform {
         position: absolute;
         left: 33%;
         top: 33%;
         height: 33%;
         width: 33%;
         margin: auto auto;
-        display: none;
         animation-name: loginfadein;
         animation-duration: 1s;
         animation-delay: 4s;
