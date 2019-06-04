@@ -32,6 +32,7 @@
         <div class="google-map">
             <google-map />
         </div>
+        <pop-up></pop-up>
     </section>
 </template>
 
@@ -43,6 +44,7 @@
     import loactions_holder from '../../components/locations_holder';
     // import image from "../../../resources/images/Logo.png"
     import GoogleMap from "../../components/GoogleMap";
+    import PopUp from "../../components/PopUp";
 
     export default {
         name: "dashboard",
@@ -51,7 +53,8 @@
             leaseplanButtonOrange,
             start,
             GoogleMap,
-            loactions_holder
+            loactions_holder,
+            PopUp
         },
         data: function () {
             return {
