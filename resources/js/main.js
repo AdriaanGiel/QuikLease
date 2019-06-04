@@ -20,4 +20,4 @@ const app = new Vue({
     router: router
 });
 
-$.material.init()
+// $.material.init()

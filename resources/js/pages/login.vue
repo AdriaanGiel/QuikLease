@@ -9,17 +9,26 @@
             <div class="inputs">
                 <div class="loginform" v-show="this.showForm">
                     <form class="form" action="/" method="post">
-                        <div class="form-group label-placeholder">
-                            <label for="i5p" class="control-label">label-placeholder</label>
-                            <input type="email" class="form-control" id="i5p">
-                            <span class="help-block">This is a hint as a <code>span.help-block.hint</code></span>
+                        <div class="forminputs">
+                            <div class="inputs">
+                                <!-- <div class="mdc-text-field mdc-text-field--no-label">
+                                    <input type="text" class="mdc-text-field__input"  aria-label="Label">
+                                <div class="mdc-line-ripple"></div>
+                                <label class="mdc-floating-label">Email</label>
+                                </div> -->
+                                <div class="mdc-text-field">
+                                    <input class="mdc-text-field__input">
+                                    <div class="mdc-line-ripple"></div>
+                                    <label class="mdc-floating-label">Email</label>
+                                </div>
+                                <div class="mdc-text-field">
+                                    <input class="mdc-text-field__input">
+                                    <div class="mdc-line-ripple"></div>
+                                    <label class="mdc-floating-label">Wachtwoord</label>
+                                </div>
+                                <input type="submit" class="btn btn-primary btninput">
+                            </div>
                         </div>
-                        <div class="form-group label-placeholder">
-                            <label for="i5p" class="control-label">label-placeholder</label>
-                            <input type="email" class="form-control" id="i5p">
-                            <span class="help-block">This is a hint as a <code>span.help-block.hint</code></span>
-                        </div>
-                        <input type="submit">
                     </form>
                 </div>
             </div>
@@ -31,6 +40,8 @@
 <script>
     import IconBase from '../../components/IconBase';
     import Logo from '../../components/icons/Logo';
+    import {MDCTextField} from '@material/textfield';
+
     export default {
         name: "login",
         components: {
@@ -47,9 +58,12 @@
                     console.log('in settimeout')
                 this.showForm = true
                 }, 4000);
+            const textField = new MDCTextField(document.querySelector('.mdc-text-field'));
         },
         
     }
+
+    
     
 </script>
 
@@ -114,6 +128,27 @@
         animation-delay: 4s;
         animation-iteration-count: 1;
         animation-fill-mode: forwards;
+    }
+
+    .forminputs{
+        position: absolute;
+        left: 20%;
+        top: 20%;
+        height: 300px;
+        width: 300px;
+        margin: auto auto;
+        background-color: #F5F5F5;
+    }
+
+    .btninput{
+        align-content: center;
+        margin-top: 20px;
+        margin-left: 20%;
+    }
+
+    .inputs{
+        margin-top: 25%;
+        margin-left: 25%;
     }
 
     @keyframes loginfadein {
