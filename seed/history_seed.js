@@ -1,66 +1,62 @@
 const {History, Bike,User,BikeRack,School} = require('../database');
 const Moment = require('moment');
-async function getAllData()
-{
+async function getAllData() {
     let bikes = await Bike.findAll();
     let users = await User.findAll();
-    const schools = await School.findAll({
+    const school = await School.findOne({
+    where:{
+        name: "Botsford - Jast"
+    },
     include:[{model:BikeRack,
         where: {occupied: true},
         include:[{model:History,
-            include: [{model:Bike, where:{active: 0}}]
+            where:{park: 1}
         }]
     }]
 });
 
-
-
-    return {bikes: bikes, users: users, schools: schools};
-    
-    
+    return {bikes: bikes, users: users, school: school};
 }
 getAllData().then((data) => {
 
     let startDate = Moment("20180101");
     let startHour = 6;
     let endHour = 24;
-    let schools = data.schools;
+    let school = data.school;
+    
+    data.school.BikeRacks.forEach((rack) => {
+
+        
+
+    });
 
 // console.log(startDate.hours(13).minutes(30).format('MMMM Do YYYY, h:mm:ss a'));
-    let weekenddays = 0;
-    console.log();
-    for(let i = 0; i < 364; i++){
-        startDate.add(1,"days");
-        startDate.hours(6);
+//     let weekenddays = 0;
+//     console.log();
+//     for(let i = 0; i < 364; i++){
+//         startDate.add(1,"days");
+//         startDate.hours(6);
+//
+//         if(weekend(i)){
+//             continue;
+//         }
+//
+//         let bikesUsedDaily1 = Math.floor(Math.random() * 21);
 
-        if(weekend(i)){
-            continue;
-        }
+//         let bikesUsedHourly1 = Math.ceil(Math.floor(Math.random() * (bikesUsedDaily1 / 7)));
+//
+//         let bikesUsedTotal = 0;
 
-        for($y = 0; $y < 18; $y++){
-
-            // schools[0];
-            // schools[1];
-            // schools[2];
-            // schools[3];
-            // schools[4];
-            // schools[5];
-            // schools[6];
-            // schools[7];
-            // schools[8];
-            // schools[9];
-            // schools[10];
-            // schools[11];
-        }
-
-
-
-
-    }
-    
-    console.log('schools',data.schools.length);
-    console.log('date', startDate.format('MMMM Do YYYY, h:mm:ss a'));
-    console.log('weekenddays', weekenddays);
+//
+//         for(let y = 0; y < 18; y++){
+//
+//             schools[0]
+//
+//             // schools[0];
+//             // schools[1];
+//             // schools[2];
+//
+//     }
 
 });
 

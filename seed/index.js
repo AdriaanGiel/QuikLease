@@ -10,5 +10,5 @@ sequelize.sync({force:true})
         await SchoolSeed.run();
         await UserSeed.run();
         // await BikeSeed.run();
-        await HistorySeed.run();
+        // await HistorySeed.run();
     });
