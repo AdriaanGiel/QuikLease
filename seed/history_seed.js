@@ -8,14 +8,18 @@ async function getAllData() {
         name: "Botsford - Jast"
     },
     include:[{model:BikeRack,
-        where: {occupied: true},
-        include:[{model:History,
-            where:{park: 1}
-        }]
+        where: {occupied: true}
     }]
 });
+    console.log("School",school.BikeRacks );
+    let idArray = school.BikeRacks.map((rack) => {return rack.id});
+    let histories = await History.findAll({where:{
+            id: {in: idArray},
+            park: 1
+    }});
 
-    return {bikes: bikes, users: users, school: school};
+
+    return {bikes: bikes, users: users, school: school, histories: histories};
 }
 getAllData().then((data) => {
 
@@ -23,12 +27,17 @@ getAllData().then((data) => {
     let startHour = 6;
     let endHour = 24;
     let school = data.school;
+
+    console.log("Data",data.histories);
     
-    data.school.BikeRacks.forEach((rack) => {
+    // data.school.BikeRacks.forEach((rack) => {
+    //
+    //
+    //
+    // });
 
-        
 
-    });
+
 
 // console.log(startDate.hours(13).minutes(30).format('MMMM Do YYYY, h:mm:ss a'));
 //     let weekenddays = 0;
