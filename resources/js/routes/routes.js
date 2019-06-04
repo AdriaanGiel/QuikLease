@@ -1,5 +1,5 @@
 import VueRouter from 'vue-router';
-import login from '../pages/login';
+import login from '../pages/temp_login';
 import dashboard from '../pages/dashboard';
 
 
