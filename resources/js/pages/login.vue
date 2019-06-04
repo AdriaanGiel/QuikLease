@@ -7,10 +7,10 @@
                 <IconBase x="0px" y="0px" width="100%" height="100%" viewBox="0 0 803 903" icon="Logo"><Logo class="logosvg"></Logo></IconBase>
             </div>
             <div class="inputs">
-                <div class="loginform" v-show="this.showForm">
+                <div class="loginform" v-show="this.AnimationDone">
                     <form class="form" action="/" method="post">
                         <div class="forminputs">
-                            <div class="inputs">
+                            <div v-if="showForm" class="inputs">
                                 <!-- <div class="mdc-text-field mdc-text-field--no-label">
                                     <input type="text" class="mdc-text-field__input"  aria-label="Label">
                                 <div class="mdc-line-ripple"></div>
@@ -27,6 +27,13 @@
                                     <label class="mdc-floating-label">Wachtwoord</label>
                                 </div>
                                 <input type="submit" class="btn btn-primary btninput">
+                            </div>
+                            <div v-else class="inputs">
+                                <div class="mdc-text-field">
+                                    <input class="mdc-text-field__input">
+                                    <div class="mdc-line-ripple"></div>
+                                    <label class="mdc-floating-label">Two steps verification</label>
+                                </div>
                             </div>
                         </div>
                     </form>
@@ -50,13 +57,14 @@
         },
         data(){
             return {
-                showForm: false
+                AnimationDone: false,
+                showForm: true,
             }
         },
         mounted(){
             setTimeout(() => {
                     console.log('in settimeout')
-                this.showForm = true
+                this.AnimationDone = true
                 }, 4000);
             const textField = new MDCTextField(document.querySelector('.mdc-text-field'));
         },

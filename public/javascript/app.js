@@ -5861,6 +5861,16 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -5872,7 +5882,8 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      showForm: false
+      AnimationDone: false,
+      showForm: true
     };
   },
   mounted: function mounted() {
@@ -5880,7 +5891,7 @@ __webpack_require__.r(__webpack_exports__);
 
     setTimeout(function () {
       console.log('in settimeout');
-      _this.showForm = true;
+      _this.AnimationDone = true;
     }, 4000);
     var textField = new _material_textfield__WEBPACK_IMPORTED_MODULE_2__["MDCTextField"](document.querySelector('.mdc-text-field'));
   }
@@ -13310,13 +13321,51 @@ var render = function() {
               {
                 name: "show",
                 rawName: "v-show",
-                value: this.showForm,
-                expression: "this.showForm"
+                value: this.AnimationDone,
+                expression: "this.AnimationDone"
               }
             ],
             staticClass: "loginform"
           },
-          [_vm._m(0)]
+          [
+            _c(
+              "form",
+              { staticClass: "form", attrs: { action: "/", method: "post" } },
+              [
+                _c("div", { staticClass: "forminputs" }, [
+                  _vm.showForm
+                    ? _c("div", { staticClass: "inputs" }, [
+                        _vm._m(0),
+                        _vm._v(" "),
+                        _vm._m(1),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "button-box" }, [
+                          _c(
+                            "button",
+                            {
+                              staticClass: "btn btn-default",
+                              attrs: {
+                                disabled: _vm.submitForm,
+                                type: "submit"
+                              },
+                              on: { click: this.switchToVerification }
+                            },
+                            [
+                              _vm._v("Button "),
+                              _vm.showLoader
+                                ? _c("i", {
+                                    staticClass: "fas fa-spin fa-sync-alt"
+                                  })
+                                : _vm._e()
+                            ]
+                          )
+                        ])
+                      ])
+                    : _c("div", { staticClass: "inputs" }, [_vm._m(2)])
+                ])
+              ]
+            )
+          ]
         )
       ])
     ])
@@ -13327,40 +13376,44 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c(
-      "form",
-      { staticClass: "form", attrs: { action: "/", method: "post" } },
-      [
-        _c("div", { staticClass: "forminputs" }, [
-          _c("div", { staticClass: "inputs" }, [
-            _c("div", { staticClass: "mdc-text-field" }, [
-              _c("input", { staticClass: "mdc-text-field__input" }),
-              _vm._v(" "),
-              _c("div", { staticClass: "mdc-line-ripple" }),
-              _vm._v(" "),
-              _c("label", { staticClass: "mdc-floating-label" }, [
-                _vm._v("Email")
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "mdc-text-field" }, [
-              _c("input", { staticClass: "mdc-text-field__input" }),
-              _vm._v(" "),
-              _c("div", { staticClass: "mdc-line-ripple" }),
-              _vm._v(" "),
-              _c("label", { staticClass: "mdc-floating-label" }, [
-                _vm._v("Wachtwoord")
-              ])
-            ]),
-            _vm._v(" "),
-            _c("input", {
-              staticClass: "btn btn-primary btninput",
-              attrs: { type: "submit" }
-            })
-          ])
-        ])
-      ]
-    )
+    return _c("div", { staticClass: "mdc-text-field" }, [
+      _c("input", { staticClass: "mdc-text-field__input" }),
+      _vm._v(" "),
+      _c("div", { staticClass: "mdc-line-ripple" }),
+      _vm._v(" "),
+      _c("label", { staticClass: "mdc-floating-label" }, [_vm._v("Email")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "mdc-text-field" }, [
+      _c("input", { staticClass: "mdc-text-field__input" }),
+      _vm._v(" "),
+      _c("div", { staticClass: "mdc-line-ripple" }),
+      _vm._v(" "),
+      _c("label", { staticClass: "mdc-floating-label" }, [_vm._v("Wachtwoord")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "mdc-text-field" }, [
+      _c("input", { staticClass: "mdc-text-field__input" }),
+      _vm._v(" "),
+      _c("div", { staticClass: "mdc-line-ripple" }),
+      _vm._v(" "),
+      _c("label", { staticClass: "mdc-floating-label" }, [
+        _vm._v("Two steps verification")
+      ]),
+      _vm._v(" "),
+      _c("input", {
+        staticClass: "btn btn-primary btninput",
+        attrs: { type: "submit" }
+      })
+    ])
   }
 ]
 render._withStripped = true
