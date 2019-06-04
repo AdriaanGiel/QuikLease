@@ -4,3 +4,4 @@
 /quicklease.sqlite
 /quickfleet.sqlite
 /.env
+/package-lock.json
