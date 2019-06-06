@@ -1,7 +1,11 @@
+@import "~bootstrap-material-design/dist/css/bootstrap-material-design.min.css";
 @import "~bootstrap/dist/css/bootstrap.min.css";
+@import "~@material/textfield/mdc-text-field";
+
 
 body{
     background: white;
+    overflow: hidden;
 }
 .remove-padding{
      padding: 0px 0px 0px 0px;
@@ -36,6 +40,25 @@ g#fleet {
 }
 
 @keyframes move {
+    from {
+        transform: translateX(-500%);
+    }
+
+    to {
+        transform: translateX(0%);
+    }
+}
+
+g#fleet {
+    transform: translateX(-500%);
+    animation-name: movefleet;
+    animation-duration: 0.5s;
+    animation-delay: 0.5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes movefleet {
     from {
         transform: translateX(-500%);
     }

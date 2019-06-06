@@ -1,4 +1,5 @@
 let mix = require('laravel-mix');
+const webpack = require('webpack');
 
 /*
  |--------------------------------------------------------------------------
@@ -11,8 +12,12 @@ let mix = require('laravel-mix');
  |
  */
 
+
+
 mix.js('resources/js/main.js', 'public/javascript/app.js')
-    .sass('resources/styles/main.scss', 'public/stylesheets/app.css')
+    .sass('resources/styles/main.scss', 'public/stylesheets/app.css', {
+        includePaths: ['node_modules']
+    })
     .extract(['vue','vue-router','bootstrap']);
 
 // Full API
