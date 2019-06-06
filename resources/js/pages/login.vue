@@ -2,7 +2,7 @@
     <div class="background">
         <div class="container">
             <div class="circle">
-            </div>    
+            </div>
             <div class="logo">
                 <IconBase x="0px" y="0px" width="100%" height="100%" viewBox="0 0 803 903" icon="Logo"><Logo class="logosvg"></Logo></IconBase>
             </div>
@@ -35,7 +35,7 @@
     }
 
     .container {
-       
+
         height: inherit;
         width: inherit;
         margin: auto auto;
