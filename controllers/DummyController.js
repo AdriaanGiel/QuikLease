@@ -87,24 +87,37 @@ async function ogIndex(){
             }]
         });
 
-        schools.forEach((school) => {
-            let rem = [];
-            for(let i = 0; i < parseInt(school.bikes_total) - parseInt(school.BikeRacks.length); i++){
-                rem.push(getRandomIntInclusive(1,500));
-            }
 
-            data.push({
-                school_id: school.id,
-                school_name: school.name,
-                timestamp: Date.now(),
-                total_bikes: school.bikes_total,
-                current_bikes: school.BikeRacks.map((rack) => {return rack.id }),
-                removed_bikes: rem
+
+            schools.forEach((school) => {
+                let rem = [];
+                for(let i = 0; i < parseInt(school.bikes_total) - parseInt(school.BikeRacks.length); i++){
+                    rem.push(getRandomIntInclusive(1,500));
+                }
+
+                data.push({
+                    school_id: school.id,
+                    school_name: school.name,
+                    timestamp: Date.now(),
+                    total_bikes: school.bikes_total,
+                    current_bikes: school.BikeRacks.map((rack) => {return rack.id }),
+                    removed_bikes: rem
+                });
             });
-        });
-        return res.json({school: data});
 
-    }catch (e) {
-        console.log("error", e);
-    }
+
+            return res.json({school: data});
+
+        }catch (e) {
+            console.log("error", e);
+        }
+
+
+
+    };
+
+function getRandomIntInclusive(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min; //The maximum is inclusive and the minimum is inclusive
 }

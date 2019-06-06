@@ -5,3 +5,4 @@
 /quickfleet.sqlite
 /.env
 /package-lock.json
+/yarn.lock
