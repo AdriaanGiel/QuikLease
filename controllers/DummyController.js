@@ -114,8 +114,7 @@ async function ogIndex(){
 
 
 
-    }
-};
+    };
 
 function getRandomIntInclusive(min, max) {
     min = Math.ceil(min);
