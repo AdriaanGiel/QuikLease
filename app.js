@@ -24,7 +24,6 @@ const dummyRouter = require('./routes/dummy');
 const bikesRouter = require('./routes/bikes');
 const SchoolsRouter = require('./routes/schools');
 
-cors.setupCorsConfig(app);
 
 
 // view engine setup
@@ -38,6 +37,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
+cors.setupCorsConfig(app);
 app.use('/dummy', dummyRouter);
 app.use('/bikes', bikesRouter);
 app.use('/Schools', SchoolsRouter);

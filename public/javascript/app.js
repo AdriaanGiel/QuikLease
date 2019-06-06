@@ -2482,6 +2482,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 
 
@@ -3170,7 +3172,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.background[data-v-780e8960] {\n    height: 100vh;\n    width: 100vw;\n    background-color: black;\n    -webkit-animation-name: colorchangebw-data-v-780e8960;\n            animation-name: colorchangebw-data-v-780e8960;\n    -webkit-animation-delay: 2s;\n            animation-delay: 2s;\n    -webkit-animation-duration: 2s;\n            animation-duration: 2s;\n    -webkit-animation-iteration-count: 1;\n            animation-iteration-count: 1;\n    -webkit-animation-fill-mode: forwards;\n            animation-fill-mode: forwards;\n}\n.container[data-v-780e8960] {\n   \n    height: inherit;\n    width: inherit;\n    margin: auto auto;\n}\n.circle[data-v-780e8960] {\n    position: absolute;\n    left: 25%;\n    top: 30%;\n    height: 500px;\n    width: 500px;\n    border-radius: 50%;\n    margin: auto auto;\n    background-color: white;\n}\n.logo[data-v-780e8960] {\n    position: absolute;\n    left: 33%;\n    top: 33%;\n    height: 33%;\n    width: 33%;\n    margin: auto auto;\n}\n@-webkit-keyframes colorchangebw-data-v-780e8960 {\nfrom {\n        background-color: black;\n}\nto {\n        background-color: white;\n}\n}\n@keyframes colorchangebw-data-v-780e8960 {\nfrom {\n        background-color: black;\n}\nto {\n        background-color: white;\n}\n}\n", ""]);
+exports.push([module.i, "\n.background[data-v-780e8960] {\n    height: 100vh;\n    width: 100vw;\n    background-color: black;\n    -webkit-animation-name: colorchangebw-data-v-780e8960;\n            animation-name: colorchangebw-data-v-780e8960;\n    -webkit-animation-delay: 2s;\n            animation-delay: 2s;\n    -webkit-animation-duration: 2s;\n            animation-duration: 2s;\n    -webkit-animation-iteration-count: 1;\n            animation-iteration-count: 1;\n    -webkit-animation-fill-mode: forwards;\n            animation-fill-mode: forwards;\n}\n.container[data-v-780e8960] {\n\n    height: inherit;\n    width: inherit;\n    margin: auto auto;\n}\n.circle[data-v-780e8960] {\n    position: absolute;\n    left: 25%;\n    top: 30%;\n    height: 500px;\n    width: 500px;\n    border-radius: 50%;\n    margin: auto auto;\n    background-color: white;\n}\n.logo[data-v-780e8960] {\n    position: absolute;\n    left: 33%;\n    top: 33%;\n    height: 33%;\n    width: 33%;\n    margin: auto auto;\n}\n@-webkit-keyframes colorchangebw-data-v-780e8960 {\nfrom {\n        background-color: black;\n}\nto {\n        background-color: white;\n}\n}\n@keyframes colorchangebw-data-v-780e8960 {\nfrom {\n        background-color: black;\n}\nto {\n        background-color: white;\n}\n}\n", ""]);
 
 // exports
 
@@ -6120,7 +6122,23 @@ var render = function() {
         ])
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "google-map" }, [_c("google-map")], 1),
+      _c(
+        "div",
+        { staticClass: "google-map" },
+        [
+          _c("iframe", {
+            staticStyle: { border: "none" },
+            attrs: {
+              src: "https://snazzymaps.com/embed/160252",
+              width: "100%",
+              height: "500px"
+            }
+          }),
+          _vm._v(" "),
+          _c("google-map")
+        ],
+        1
+      ),
       _vm._v(" "),
       _c("Logout")
     ],

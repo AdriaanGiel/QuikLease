@@ -30,6 +30,8 @@
             </div>
         </div>
         <div class="google-map">
+            <iframe src="https://snazzymaps.com/embed/160252" width="100%" height="500px" style="border:none;"></iframe>
+
             <google-map />
         </div>
         <Logout></Logout>
