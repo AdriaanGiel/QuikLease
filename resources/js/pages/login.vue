@@ -7,8 +7,17 @@
 </template>
 
 <script>
+    import Bike from '../models/Bike';
     export default {
-        name: "login"
+        name: "login",
+        data(){
+            return {
+                bikes:[]
+            }
+        },
+        async beforeCreate(){
+          this.bikes = await Bike.all();
+        }
     }
 </script>
 

@@ -1,5 +1,5 @@
 const {School,Bike,BikeRack, History} = require('../database');
-
+const Moment = require('moment');
 const faker = require('faker');
 
 let schools = [];
@@ -39,7 +39,8 @@ module.exports = {
                                    park:true,
                                    BikeId: bike.id,
                                    BikeRackId: rack.id,
-                                   UserId: 1
+                                   UserId: 1,
+                                   createdAt: Moment('20180101').format()
                                });
 
                            });

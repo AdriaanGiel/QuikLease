@@ -20,7 +20,7 @@ startDatabase();
 startAIDatabase();
 
 const indexRouter = require('./routes/index');
-const usersRouter = require('./routes/users');
+const dummyRouter = require('./routes/dummy');
 const bikesRouter = require('./routes/bikes');
 const SchoolsRouter = require('./routes/schools');
 
@@ -38,7 +38,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/dummy', dummyRouter);
 app.use('/bikes', bikesRouter);
 app.use('/Schools', SchoolsRouter);
 

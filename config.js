@@ -9,7 +9,8 @@ module.exports = {
         options: {
             dialect: process.env.DIALECT || 'sqlite',
             host: process.env.HOST || 'localhost',
-            storage: path.resolve(__dirname,'./quicklease.sqlite')
+            storage: path.resolve(__dirname,'./quicklease.sqlite'),
+            logging:false
         }
     },
     dbs:{
