@@ -1,5 +1,5 @@
-const {School,Bike,BikeRack} = require('../database');
-
+const {School,Bike,BikeRack, History} = require('../database');
+const Moment = require('moment');
 const faker = require('faker');
 
 let schools = [];
@@ -23,26 +23,28 @@ module.exports = {
                 console.log("Schools added");
                 result.forEach((school) => {
                     let localRacks = [];
-                    let localBikes = [];
-
-                    console.log(school);
-                    
                     for(let y = 0; y < 20; y++){
                         // Create 20 racks for location i
                         localRacks.push({
                             SchoolId:school.id,
                             occupied: true
                         });
-
-                        // Create 20 bikes for location i
-                        localBikes.push({
-                            active: false
-                        });
                     }
 
                     BikeRack.bulkCreate(localRacks).then((racks) => {
+                        racks.forEach((rack) => {
+                           Bike.create({active:true}).then((bike) => {
 
-                        Bike.bulkCreate(localBikes).then(() => console.log("bikes added"));
+                               History.create({
+                                   park:true,
+                                   BikeId: bike.id,
+                                   BikeRackId: rack.id,
+                                   UserId: 1,
+                                   createdAt: Moment('20180101').format()
+                               });
+
+                           });
+                        });
                     });
                 });
 
