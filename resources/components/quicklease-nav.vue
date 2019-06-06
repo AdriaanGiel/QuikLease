@@ -1,7 +1,7 @@
 <template>
     <nav class="nav">
         <div class="back">
-            <IconBase width="100%" height="100%" viewBox="0 0 803 903" icon-name="arrow-left"><Arrowleft></Arrowleft></IconBase>
+            <IconBase width="100%" height="100%" viewBox="0 0 803 903" icon-name="arrow-left-2"><Arrowleft2 fill="grey"></Arrowleft2></IconBase>
         </div>
         <div class="logo-holder">
             <IconBase class="logo" width="100%" height="100%" viewBox="0 0 803 903" icon-name="Logo"><Logo></Logo></IconBase>
@@ -12,12 +12,12 @@
 <script>
     import IconBase from "../components/IconBase";
     import Logo from '../components/icons/Logo'
-    import Arrowleft from '../components/icons/arrow-left'
+    import Arrowleft2 from '../components/icons/arrow-left-2'
 
 
     export default {
         name: "nav",
-        components: {IconBase, Arrowleft, Logo}
+        components: {IconBase, Arrowleft2, Logo}
     }
 </script>
 
@@ -28,7 +28,7 @@
     }
     .back{
         float: left;
-        width: 115px;
+        width: 100px;
         margin-top: 62px;
     }
     .logo{

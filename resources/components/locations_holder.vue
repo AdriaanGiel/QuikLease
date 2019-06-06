@@ -1,32 +1,28 @@
 <template>
-        <div id="locations_holder" class="locations_holder" v-on:click="onClick()">
+        <div id="locations_holder" class="locations_holder">
             <ul id="locations" class="clearfix locations">
-                <li class="float-left custom-list-item-holder custom-list-item" v-for="(locations, index) in newarray">
-                    <ul class="location" v-for="(location, index) in locations" @click="onClick(index)">
-                        <li class="custom-list-item name" v-text="location.name"></li>
-                        <li class="custom-list-item type" v-text="location.type"></li>
-                        <li class="custom-list-item amount" v-text="location.amount"></li>
-                    </ul>
+                <li class="float-left custom-list-item-holder custom-list-item" v-for="(locations) in newarray">
+                    <Location-button :location="location" v-for="location in locations"></Location-button>
                 </li>
             </ul>
-            <div class="arrow point-left">
-                <IconBase width="100%" height="100%" viewBox="0 0 803 903" icon-name="arrow-left"><Arrowleft></Arrowleft></IconBase>
+            <div class="arrow point-left" @click="slideRight()">
+                <IconBase width="100%" height="100%" viewBox="0 0 803 903" icon-name="arrow-left"><Arrowleft fill="grey"></Arrowleft></IconBase>
             </div>
-            <div class="arrow point-right">
-                <IconBase width="100%" height="100%" viewBox="0 0 803 903" icon-name="arrow-right"><Arrowright></Arrowright></IconBase>
+            <div class="arrow point-right" @click="slideLeft()">
+                <IconBase width="100%" height="100%" viewBox="0 0 803 903" icon-name="arrow-right"><Arrowright fill="grey"></Arrowright></IconBase>
             </div>
         </div>
 </template>
 
 <script>
     import IconBase from "../components/IconBase";
-
+    import LocationButton from "../components/buttons/locationButton";
     import Arrowleft from '../components/icons/arrow-left'
     import Arrowright from '../components/icons/arrow-right'
 
     export default {
         name: "locations_holder",
-        components: {IconBase, Arrowleft, Arrowright},
+        components: {IconBase, LocationButton, Arrowleft, Arrowright},
         props: ["classname"],
         data: function () {
             return {
@@ -73,6 +69,46 @@
                         name: "Museumpark",
                         type: "Hogeschool locatie",
                         amount: "17 fietsen ophalen"
+                    },{
+                        id: "9",
+                        name: "Museumpark",
+                        type: "Hogeschool locatie",
+                        amount: "17 fietsen ophalen"
+                    },{
+                        id: "10",
+                        name: "Museumpark",
+                        type: "Hogeschool locatie",
+                        amount: "17 fietsen ophalen"
+                    },{
+                        id: "11",
+                        name: "Museumpark",
+                        type: "Hogeschool locatie",
+                        amount: "17 fietsen ophalen"
+                    },{
+                        id: "12",
+                        name: "Museumpark",
+                        type: "Hogeschool locatie",
+                        amount: "17 fietsen ophalen"
+                    },{
+                        id: "13",
+                        name: "Museumpark",
+                        type: "Hogeschool locatie",
+                        amount: "17 fietsen ophalen"
+                    },{
+                        id: "14",
+                        name: "Museumpark",
+                        type: "Hogeschool locatie",
+                        amount: "17 fietsen ophalen"
+                    },{
+                        id: "15",
+                        name: "Museumpark",
+                        type: "Hogeschool locatie",
+                        amount: "17 fietsen ophalen"
+                    },{
+                        id: "16",
+                        name: "Museumpark",
+                        type: "Hogeschool locatie",
+                        amount: "17 fietsen ophalen"
                     }
                 ]
             }
@@ -94,7 +130,7 @@
                 }
 
             },
-            onClick: function (index) {
+            slideLeft: function (index) {
 
                 let position = this.$el.children[0].offsetLeft;
                 let element = this.$el.children[0];
@@ -126,7 +162,14 @@
 
                 // console.log('element position = ' + elemtentPosition);
                 slide(element, position);
-            }
+            },
+            slideRight: function (index) {
+
+                let position = this.$el.children[0].offsetLeft;
+                let element = this.$el.children[0];
+
+                slideRight(element, position);
+            },
         }
     }
 
@@ -135,14 +178,46 @@
         console.log('el', el);
         let oldpos = position;
         console.log("oldpos",oldpos);
+        let elements = 18 / 6;
         // console.log(position);
         // element.style.left = position + 100 +"px";
 
-        element.style.setProperty('left', position - 156 + "px");
+        if(oldpos <= (elements *(-313)) +313){
+            console.log("groter");
+            oldpos = 0+"px";
+            position = 0+"px";
+            element.style.setProperty('left', 0 + "px");
+            element.style.setProperty('--currentX', 0 + "px");
+            element.style.setProperty('--nextX', 0 + "px");
+        }
+
+        element.style.setProperty('left', position - 313 + "px");
+        element.style.setProperty('--currentX', oldpos + "px");
+        element.style.setProperty('--nextX', position - 313 + "px");
+        // console.log(element);
+
+        //
+        // document.getElementById('locations').className ='example';
+        // document.querySelector('.locations').style.setProperty('--m',position + 100);
+    }
+
+    function slideRight(el, position) {
+        let element = el;
+        console.log('el', el);
+        let oldpos = position;
+        console.log("oldpos",oldpos);
+
+        console.log("right");
+
+
+        // console.log(position);
+        // element.style.left = position + 100 +"px";
+
+        element.style.setProperty('left', position + 313 + "px");
 
         element.style.setProperty('--currentX', oldpos + "px");
 
-        element.style.setProperty('--nextX', position - 156 + "px");
+        element.style.setProperty('--nextX', position + 313 + "px");
         // console.log(element);
 
         //
@@ -178,38 +253,18 @@
         height: 400px;
     }
 
-    .location{
-        padding: 4% 8%;
-    }
-    .location >>> .name{
-        font-size: 30px;
-    }
-    .location >>> .type{
-        font-size: 18px;
-        border-bottom: 1px solid grey;
-    }
-    .location >>> .amount{
-        font-size: 18px;
-        padding: 14px 0px 0px 0px;
-    }
-
-    .click-button{
-
-    }
 
     .custom-list-item{
         list-style: none;
-        /*padding: 24px 24px;*/
     }
     .custom-list-item-holder{
-        /*position: absolute;*/
         width: 313px;
-        float: left ;
+        float: left;
+        padding: 0px 32px;
     }
 
     #locations{
         padding-left: 0px;
-        /*width: 200px;*/
         width: 1000%;
         height: 400px;
         position: absolute;
@@ -233,7 +288,7 @@
         left: -6px;
     }
     .point-right{
-        right: -6px;
+        right: -26px;
     }
 
 

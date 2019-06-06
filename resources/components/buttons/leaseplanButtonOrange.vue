@@ -1,8 +1,8 @@
 <template>
     <div v-on:click="onClick" class="leaseplanButton">
-        <div class="leaseplanButton-label">{{ text }}</div>
+        <div class="leaseplanButton-label">{{ textName }}</div>
         <div class="icon-holder">
-                <IconBase width="70%" height="60%" viewBox="0 0 500 500" icon-name="location"><Location :is="child_component"></Location></IconBase>
+                <IconBase height="100%" :width="customWidth" :viewBox="customViewBox" icon-name="location"><Location :is="child_component"></Location></IconBase>
         </div>
             <!--<IconBase icon-name="location"><Location :is="child_component"></Location></IconBase>-->
     </div>
@@ -15,7 +15,7 @@
 
     export default {
         name: "leaseplanButtonOrange",
-        props:['text', 'iconName'],
+        props:['textName', 'iconName', 'customViewBox', 'customWidth'],
         components:{
             IconBase,
             Location,
@@ -56,11 +56,11 @@
         color: white;
         width: 100%;
         text-align: center;
-        margin: 5% 0px;
+        margin: 10% 0px 10px;
     }
 
     .icon-holder{
-        padding: 10% 15% 20% 15%;
+        padding: 0% 15% 20% 15%;
         text-align: center;
     }
 </style>

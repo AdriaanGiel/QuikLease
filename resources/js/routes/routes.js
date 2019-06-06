@@ -3,6 +3,8 @@ import login from '../pages/login';
 import dashboard from '../pages/dashboard';
 import location_detail from '../pages/location_detail';
 import locations_overview from '../pages/locations_overview';
+import maintenance_overview from '../pages/maintenance';
+import collect from '../pages/collect';
 
 
 let routes = [
@@ -47,6 +49,28 @@ let routes = [
             metaTags: [
                 { name: "description", content: "locations" },
                 { property: "og:description", content: "locations" }
+            ]
+        }
+    },
+    {
+        path: '/maintenance',
+        component: maintenance_overview,
+        meta: {
+            title: "Quiklease - maintenance",
+            metaTags: [
+                { name: "description", content: "maintenance" },
+                { property: "og:description", content: "maintenance" }
+            ]
+        }
+    },
+    {
+        path: '/collect',
+        component: collect,
+        meta: {
+            title: "Quiklease - collect",
+            metaTags: [
+                { name: "description", content: "collect" },
+                { property: "og:description", content: "collect" }
             ]
         }
     },

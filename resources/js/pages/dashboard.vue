@@ -18,8 +18,8 @@
                     <div class="row margin-top-30">
                         <div class="col-sm-12 col-md-12 col-lg-12 remove-padding">
                             <div>
-                                <leaseplanButtonOrange class="leaseplanButtonLeft" width="90" height="90" text="Locatie" iconName="Location"></leaseplanButtonOrange>
-                                <leaseplanButtonOrange class="" width="90" height="90" text="Onderhoud" iconName="bicycle" @mouseover.native="hover = true" @mouseleave.native="hover = false"></leaseplanButtonOrange>
+                                <leaseplanButtonOrange class="leaseplanButtonLeft" width="90" height="90" custom-width="75%" custom-view-box="0 0 500 500" textName="Locatie" iconName="Location"></leaseplanButtonOrange>
+                                <leaseplanButtonOrange class="" width="90" height="90" textName="Onderhoud" custom-width="100%" custom-view-box="0 40 500 380" iconName="bicycle" viewBox="bicycle"></leaseplanButtonOrange>
                             </div>
                         </div>
                     </div>
@@ -62,9 +62,6 @@
             Logout
         },
         methods: {
-            mouseOver(){
-                console.log("hoi");
-            }
             // onClick: function (index) {
             //     //let the algorithm do his job
             //     // console.log(locations[index].id);

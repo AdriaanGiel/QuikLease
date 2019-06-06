@@ -7,11 +7,21 @@
                 </div>
             </div>
         </div>
-        <quicklease_header custom-width="75%" custom-view-box="0 0 500 500" textName="Location" iconName="Location"></quicklease_header>
+        <quicklease_header textName="Ophalen" iconName="bicycle"></quicklease_header>
         <div class="container">
             <div class="row">
-                <div class="col-sm-12 col-md-12 col-lg-12">
-                    <location-button class="location-overview-grid location-button-padding" :location="location" v-for="location in locations"></location-button>
+                <div class="col-sm-5 col-md-5 col-lg-5">
+                    <location-button class="location-overview-grid" :location="location" v-for="location in locations"></location-button>
+                </div>
+                <div class="col-sm-7 col-md-7 col-lg-7">
+                    <unlockBike></unlockBike>
+                    <unlockBike></unlockBike>
+                    <unlockBike></unlockBike>
+                    <unlockBike></unlockBike>
+                    <unlockBike></unlockBike>
+                    <unlockBike></unlockBike>
+                    <unlockBike></unlockBike>
+                    <unlockBike></unlockBike>
                 </div>
             </div>
         </div>
@@ -21,19 +31,22 @@
 <script>
     import quicklease_nav from "../../components/quicklease-nav";
     import quicklease_header from "../../components/quicklease_header";
+    import unlockBike from "../../components/buttons/unlockBike";
     import LocationButton from "../../components/buttons/locationButton";
     import Logout from "../../components/buttons/logout";
 
     export default {
-        name: "locations",
+        name: "collect",
         components:{
             quicklease_nav,
             quicklease_header,
+            unlockBike,
             LocationButton,
             Logout
         },
         data: function () {
             return {
+                newarray: [],
                 locations: [{
                     id: "1",
                     name: "Wijnhaven",
@@ -124,11 +137,10 @@
 </script>
 
 <style scoped>
-    .location-overview-grid{
-        width: 50%;
-        float: inherit;
+    .unlockBike-holder{
+        width: 41%;
     }
-    .location-button-padding{
-        padding: 40px 50px 0px 40px;
+    .location{
+        padding: 15% 8%;
     }
 </style>
