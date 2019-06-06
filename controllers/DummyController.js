@@ -37,7 +37,16 @@ module.exports = {
                 return !foundRecords.includes(id)
             });
 
-            console.log(records);
+            let otherRecords = await History.findAll({
+                BikeRackId: notActiveRacks,
+                createdAt:{
+                    [Op.lte]:[startDate.format()]
+                },
+                order: [ [ 'createdAt', 'DESC' ]],
+                limit: notActiveRacks.length
+            });
+
+            console.log(otherRecords);
         }catch (e) {
             console.log("Error", e.message);
         }
