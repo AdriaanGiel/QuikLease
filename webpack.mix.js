@@ -18,7 +18,7 @@ mix.js('resources/js/main.js', 'public/javascript/app.js')
     .sass('resources/styles/main.scss', 'public/stylesheets/app.css', {
         includePaths: ['node_modules']
     })
-    .copy('images/map.png', 'public/images/map.png')
+    //.copy('images/map.png', 'public/images/map.png')
     .extract(['vue','vue-router','bootstrap']);
 
 // Full API
