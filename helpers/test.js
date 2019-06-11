@@ -17,7 +17,10 @@ async function index(){
     let rackIds = racks.map((item) => item.id);
     let date = Moment('20180101');
     date.hours(0).minutes(0);
-    let previousBikes = {};
+    let previousBikes = {
+        parked:[],
+        active:[]
+    };
     // Days
     for(let i = 0; i < 20; i++){
         // Hours
@@ -38,21 +41,29 @@ async function index(){
 
 
                 if(records.length){
-                    hourlyArray.push(records);
-                    let activeBikes = hourlyArray.filter((rec) => { return rec.park === false }).map((rec) => rec.BikeId);
-                    let parkedBikes = hourlyArray.filter((rec) => { return rec.park === true }).map((rec) => rec.BikeId);
+                    hourlyArray = records;
 
+                    let activeBikes = hourlyArray.filter((rec) => { return (rec.park === false) }).map((rec) => { return rec.BikeId; });
+                    let parkedBikes = hourlyArray.filter((rec) => { return (rec.park === true) }).map((rec) => { return rec.BikeId; });
 
-                    let addedBikes = previousBikes;
+                    let addedBikes = parkedBikes.filter((bike) => {
+                        return !previousBikes.parked.includes(bike);
+                    });
 
+                    let removedBikes = previousBikes.parked.filter((bike) => {
+                       return activeBikes.includes(bike);
+                    });
 
+                    
                     let data = {
                         school_id: 1,
                         current_bikes: parkedBikes,
-                        added_bikes: ,
-                        removed_bikes: ,
+                        added_bikes: addedBikes,
+                        removed_bikes: removedBikes,
                         timestamp: date.format(),
                     };
+
+                    hourlyRecords.push(data);
 
                     previousBikes = {
                         active: activeBikes,
@@ -74,7 +85,8 @@ async function index(){
         date.add(1,'days');
     }
 
-    console.log(hourlyRecords);
+
+
 }
 
 index();
