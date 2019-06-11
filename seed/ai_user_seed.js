@@ -8,6 +8,8 @@ async function createUser(faker){
         email: faker.internet.email(),
         password: 'password'
     });
+
+
 }
 
 module.exports = {

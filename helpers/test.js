@@ -17,12 +17,13 @@ async function index(){
     let rackIds = racks.map((item) => item.id);
     let date = Moment('20180101');
     date.hours(0).minutes(0);
-
+    let previousBikes = {};
     // Days
     for(let i = 0; i < 20; i++){
         // Hours
         for(let y = 0; y < 24; y++){
             let endDate = date;
+            let hourlyArray = [];
 
             try {
                 let records = await History.findAll({
@@ -32,14 +33,34 @@ async function index(){
                             [Op.between]:[date.format(), endDate.add(1,'h').format()]
                         }
                     },
-                    raw: true,
                     attributes:['BikeId', 'BikeRackId','park']
                 });
 
 
                 if(records.length){
-                    hourlyRecords.push(records);
+                    hourlyArray.push(records);
+                    let activeBikes = hourlyArray.filter((rec) => { return rec.park === false }).map((rec) => rec.BikeId);
+                    let parkedBikes = hourlyArray.filter((rec) => { return rec.park === true }).map((rec) => rec.BikeId);
+
+
+                    let addedBikes = previousBikes;
+
+
+                    let data = {
+                        school_id: 1,
+                        current_bikes: parkedBikes,
+                        added_bikes: ,
+                        removed_bikes: ,
+                        timestamp: date.format(),
+                    };
+
+                    previousBikes = {
+                        active: activeBikes,
+                        parked: parkedBikes
+                    }
                 }
+
+
 
 
             }catch (e) {
