@@ -4,7 +4,7 @@ const axios = require('axios');
 const util = require('util');
 
 let HRlocationsAmmount = 1; // How many locations to generate for
-let iterations = 100;       // How many data entries to generate per location
+let iterations = 500;       // How many data entries to generate per location
 
 // FUNCTIONS TO USE IN CODE
 // generate random int between two values
@@ -199,7 +199,8 @@ async function getBikeData() {
         demand = random_int(0, 4);
         // get time in hh:mm
         let today = new Date();
-        timestamp = today.getHours() + "" + ('0' + today.getMinutes()).slice(-2);
+        //timestamp = today.getHours() + "" + ('0' + today.getMinutes()).slice(-2); <- with minutes
+        timestamp = ('0' + today.getHours()).slice(-2);
         output = (removed_bikes.length + demand)
 
         // add to final array
@@ -211,14 +212,14 @@ async function getBikeData() {
                 "removed_bikes": removed_bikes,
                 "current_bikes": current_bikes,
                 "demand": demand,
-                "timestamp": timestamp
+                "timestamp": timestamp,
+                "output": output
             }
         )
     }
     let school_data = {
         "school": locationsData
     }
-
     // loop trough all entries in school data
     let mapped_school_data = school_data.school.map((school) => {
 
@@ -241,7 +242,10 @@ async function getBikeData() {
         let demand = parseFloat(map_range(school.demand, 0, 50, 0, 1).toFixed(3));
 
         // CONVERT TIMESTAMP
-        let timestamp = map_range(school.timestamp, 0, 2359, 0, 1);
+        let timestamp = parseFloat(map_range(school.timestamp, 0, 23, 0, 1).toFixed(2));
+        
+        // CONVERT OUTPUT
+        let output = map_range(school.output, 0, 100, 0, 1);
 
         return {
             school_id: school_id,
@@ -259,15 +263,16 @@ async function getBikeData() {
 
 // SEND CONVERTED DATA TO AI DATABASE
 async function sendData() {
-    let bike_data = await getBikeData()
     let weather_data = await getWeatherData()
 
-    let data = await AI_data.create({
-        data: JSON.stringify(bike_data),
-        weather: JSON.stringify(result)
-    })
+    for (let iteration = 0; iteration < iterations; iteration++) {
+        bike_data = await getBikeData()
+        let data = await AI_data.create({
+            data: JSON.stringify(bike_data),
+            weather: JSON.stringify(weather_data)
+        })
+    }
 }
 
-for (let iteration = 0; iteration < iterations; iteration++) {
-    sendData()
-}
+// Generate data
+sendData();
