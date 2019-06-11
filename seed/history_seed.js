@@ -1,4 +1,6 @@
 const {History, Bike,User,BikeRack,School,sequelize} = require('../database');
+const Seq = require('sequelize');
+const Op = Seq.Op;
 const Moment = require('moment');
 async function getAllData() {
     let bikes = await Bike.findAll();
@@ -19,25 +21,24 @@ async function getAllData() {
 
     return {idCollection:idArray, histories: histories};
 }
-getAllData().then((data) => {
+getAllData().then(async (data) => {
 
     let startDate = Moment("20180101");
     let startHour = 6;
 
     startDate.hours(startHour).minutes(30);
 
-    for(let i = 0; i < 60; i++){
+    for(let i = 0; i < 20; i++){
 
         if(weekend(startDate)){
+            // console.log("Weekend");
+            startDate.add(1, 'days');
             continue;
         }
 
-        console.log(startDate.format());
-        createHistoryRecords(data.histories, startDate,data.idCollection, getPercentage(startDate)).then((d) => {
-            startDate = d;
-            startDate.add(1, 'days');
-        });
+        await createHistoryRecords(data.histories, startDate,data.idCollection, getPercentage(startDate));
 
+        startDate.add(1, 'days');
     }
 
 
@@ -53,6 +54,7 @@ module.exports = {
 
 function weekend(date){
 
+    console.log(date.format('dddd'));
     return date.format('dddd') === "Saturday" || date.format('dddd') === "Sunday" ;
 }
 
@@ -60,75 +62,63 @@ async function createHistoryRecords(historyData, date, idArrays, bikePercentage)
 
     let bikesUsedHours = Math.ceil(Math.floor(Math.random() * 20));
     let histories = historyData;
-
-    console.log(date.format('kk'));
-
     let counter = 0;
     for(let y = 0; y < bikesUsedHours; y++){
 
-        counter++;
-
-        histories.forEach(async (history) => {
-            let parked = true;
-            let user = history.UserId;
-            let randomUse = Math.round(Math.random());
-
-            // Check to randomize bike usage in a day
-            if(!randomUse){
-                // console.log("Random");
-                return;
-            }
-
-
-            // Check if bike is parked
-            if(history.park && counter !== bikesUsedHours){
-                // console.log("Parked");
-                parked = false;
-                let completeUser = await User.findOne({ order: [sequelize.literal('random()')] });
-                user = completeUser.id;
-            }
-
-            if(counter === bikesUsedHours){
-                // console.log("Ending");
-                parked = true;
-            }
-
-            // Create a new history record
-            try {
-                await History.create({
-                    park: parked,
-                    UserId: user,
+        await histories.forEach(async (history) => {
+            let latestRecords = await History.findOne({
+                where:{
+                    UserId: history.UserId,
                     BikeId: history.BikeId,
                     BikeRackId: history.BikeRackId,
-                    createdAt: date.format()
-                })
-            }catch (e) {
-                console.log("Error", e.message);
+                },
+                order: [ [ 'createdAt', 'DESC' ]],
+            });
+
+            if(latestRecords.park === true){
+                console.log("Parked");
+                latestRecords.park = false;
+                let user = await User.findOne({ order: [sequelize.literal('random()')] });
+                latestRecords.UserId = user.id;
+            }else{
+                latestRecords.park = true;
             }
+
+            await History.create({
+                park: latestRecords.park,
+                UserId: latestRecords.UserId,
+                BikeId: latestRecords.BikeId,
+                BikeRackId: latestRecords.BikeRackId,
+                createdAt: date.format()
+            });
+
         });
 
+
         if(date.format('k') === '24'){
+            console.log("Break");
             date.hours(6).minutes(30);
+            break;
+        }else{
+            date.add(1,'hours');
+
         }
 
-        if(date.format('k') !== '06'){
-            date.add(1,'hours');
-        }
 
         let limit = Math.ceil(20 * (bikePercentage / 100));
-
-        // TODO get random id of users that arent active on a bike
 
         // Add random limit
         histories = await History.findAll({
             where:{
-                BikeRackId: idArrays
-            },order: [sequelize.literal('random()')],
+                BikeRackId: idArrays,
+                createdAt:{
+                    [Op.between]:[Moment('20180101').format(), date.format()]
+                }
+            },order: [sequelize.literal('random()'), [ 'createdAt', 'DESC' ]],
             limit: limit
         });
 
-
-
+        counter = 0;
     }
 
     return date;

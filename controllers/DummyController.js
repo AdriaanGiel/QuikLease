@@ -6,6 +6,7 @@ const Moment = require('moment');
 module.exports = {
     async index(req,res){
 
+        let hourlyRecords = [];
         const racks = await BikeRack.findAll({
             where:{
                 SchoolId: 1
@@ -15,41 +16,44 @@ module.exports = {
         });
 
         let rackIds = racks.map((item) => item.id);
+        let date = Moment('20180101');
+        date.hours(0).minutes(0);
 
-        let startDate = Moment('20180102').hours(7).minutes(30);
-        let endDate = Moment(startDate.format('YYYY') + startDate.format('MM') + startDate.format('DD')).hours(8).minutes(30);
+        // Days
+        for(let i = 0; i < 20; i++){
+            // Hours
+            for(let y = 0; y < 24; y++){
+                let endDate = date;
 
-        try {
-            let records = await History.findAll({
-                where:{
-                    BikeRackId: rackIds,
-                    createdAt:{
-                        [Op.between]:[startDate.format(), endDate.format()]
+                try {
+                    let records = await History.findAll({
+                        where:{
+                            BikeRackId: rackIds,
+                            createdAt:{
+                                [Op.between]:[date.format(), endDate.add(1,'h').format()]
+                            }
+                        },
+                        raw: true,
+                        attributes:['BikeId', 'BikeRackId','park']
+                    });
+
+
+                    if(records.length){
+                        hourlyRecords.push(records);
                     }
-                },
-                raw: true,
-                attributes:['BikeId', 'BikeRackId','park']
-            });
 
-            let foundRecords = record.map((rec) => rec.BikeRackId);
 
-            let notActiveRacks = rackIds.filter((id) => {
-                return !foundRecords.includes(id)
-            });
+                }catch (e) {
+                    console.log("Error", e.message);
+                }
 
-            let otherRecords = await History.findAll({
-                BikeRackId: notActiveRacks,
-                createdAt:{
-                    [Op.lte]:[startDate.format()]
-                },
-                order: [ [ 'createdAt', 'DESC' ]],
-                limit: notActiveRacks.length
-            });
 
-            console.log(otherRecords);
-        }catch (e) {
-            console.log("Error", e.message);
+                date.add(1,'h');
+            }
+
+            date.add(1,'days');
         }
+
 
     }
 };
