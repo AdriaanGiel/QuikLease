@@ -2,6 +2,5 @@
     "/public/javascript/app.js": "/public/javascript/app.js",
     "/public/stylesheets/app.css": "/public/stylesheets/app.css",
     "/public/javascript/manifest.js": "/public/javascript/manifest.js",
-    "/public/javascript/vendor.js": "/public/javascript/vendor.js",
-    "/public/images/map.png": "/public/images/map.png"
+    "/public/javascript/vendor.js": "/public/javascript/vendor.js"
 }

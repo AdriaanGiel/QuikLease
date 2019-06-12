@@ -1,7 +1,10 @@
 <template>
     <nav class="nav">
         <div class="back">
-            <IconBase width="100%" height="100%" viewBox="0 0 803 903" icon-name="arrow-left-2"><Arrowleft2 fill="grey"></Arrowleft2></IconBase>
+            <a @click="$router.go(-1)">
+                <IconBase width="100%" height="100%" viewBox="0 0 803 903" icon-name="arrow-left-2"><Arrowleft2 fill="grey"></Arrowleft2></IconBase>
+            </a>
+
         </div>
         <div class="logo-holder">
             <IconBase class="logo" width="100%" height="100%" viewBox="0 0 803 903" icon-name="Logo"><Logo></Logo></IconBase>

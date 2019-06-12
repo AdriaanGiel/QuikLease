@@ -11,7 +11,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-12 col-md-12 col-lg-12">
-                    <location-button class="location-overview-grid location-button-padding" :location="location" v-for="location in locations"></location-button>
+                    <location-button @click="$router.push({ name: 'single-location', params: { id: location.id } })" class="location-overview-grid location-button-padding" :location="location" v-for="location in locations"></location-button>
                 </div>
             </div>
         </div>
@@ -23,6 +23,7 @@
     import quicklease_header from "../../components/quicklease_header";
     import LocationButton from "../../components/buttons/locationButton";
     import Logout from "../../components/buttons/logout";
+    import School from "../models/School";
 
     export default {
         name: "locations",
@@ -34,91 +35,20 @@
         },
         data: function () {
             return {
-                locations: [{
-                    id: "1",
-                    name: "Wijnhaven",
-                    type: "Hogeschool locatie",
-                    amount: "15 fietsen ophalen"
-                },
-                    {
-                        id: "2",
-                        name: "Museumpark",
-                        type: "Hogeschool locatie",
-                        amount: "45 fietsen brengen"
-                    },
-                    {
-                        id: "3",
-                        name: "Kralingse Zoom",
-                        type: "Hogeschool locatie",
-                        amount: "60 fietsen brengen"
-                    }, {
-                        id: "4",
-                        name: "Wijnhaven",
-                        type: "Hogeschool locatie",
-                        amount: "13 fietsen ophalen"
-                    }, {
-                        id: "5",
-                        name: "Museumpark",
-                        type: "Hogeschool locatie",
-                        amount: "12 fietsen ophalen"
-                    }, {
-                        id: "6",
-                        name: "Wijnhaven",
-                        type: "Hogeschool locatie",
-                        amount: "28 fietsen ophalen"
-                    }, {
-                        id: "7",
-                        name: "Wijnhaven",
-                        type: "Hogeschool locatie",
-                        amount: "6 fietsen ophalen"
-                    }, {
-                        id: "8",
-                        name: "Museumpark",
-                        type: "Hogeschool locatie",
-                        amount: "17 fietsen ophalen"
-                    }, {
-                        id: "9",
-                        name: "Museumpark",
-                        type: "Hogeschool locatie",
-                        amount: "17 fietsen ophalen"
-                    }, {
-                        id: "10",
-                        name: "Museumpark",
-                        type: "Hogeschool locatie",
-                        amount: "17 fietsen ophalen"
-                    }, {
-                        id: "11",
-                        name: "Museumpark",
-                        type: "Hogeschool locatie",
-                        amount: "17 fietsen ophalen"
-                    }, {
-                        id: "12",
-                        name: "Museumpark",
-                        type: "Hogeschool locatie",
-                        amount: "17 fietsen ophalen"
-                    }, {
-                        id: "13",
-                        name: "Museumpark",
-                        type: "Hogeschool locatie",
-                        amount: "17 fietsen ophalen"
-                    }, {
-                        id: "14",
-                        name: "Museumpark",
-                        type: "Hogeschool locatie",
-                        amount: "17 fietsen ophalen"
-                    }, {
-                        id: "15",
-                        name: "Museumpark",
-                        type: "Hogeschool locatie",
-                        amount: "17 fietsen ophalen"
-                    }, {
-                        id: "16",
-                        name: "Museumpark",
-                        type: "Hogeschool locatie",
-                        amount: "17 fietsen ophalen"
-                    }
-                ]
+                locations: []
             }
+        },
+        beforeCreate(){
+            School.all().then((result) => {
+                console.log(result.data);
+                this.locations = result.data.schools.map((school) => {
+                    school.type = 'HogeSchool locatie';
+                    school.amount = school.BikeRacks.length;
+                    return school;
+                });
+
+            });
+
         }
     }
 </script>

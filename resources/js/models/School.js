@@ -1,6 +1,6 @@
 import Base from './Base';
 
-class School extends Base{
+export default class School extends Base{
     constructor(){
         super();
     }

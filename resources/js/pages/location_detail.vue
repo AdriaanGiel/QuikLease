@@ -8,9 +8,9 @@
                 <div class="col-sm-12 col-md-12 col-lg-12">
                     <li class="custom-list-item location-detail" >
                         <ul class="location">
-                            <li class="custom-list-item name" v-text="locations[0].name"></li>
-                            <li class="custom-list-item type" v-text="locations[0].type"></li>
-                            <b><li class="custom-list-item amount" v-text="locations[0].amount"></li></b>
+                            <li class="custom-list-item name" v-text="location.name"></li>
+                            <li class="custom-list-item type" v-text="location.type"></li>
+                            <b><li class="custom-list-item amount" v-text="location.amount"></li></b>
                         </ul>
                     </li>
                 </div>
@@ -22,9 +22,9 @@
                 <table class="table table-striped" style="margin-top: 8%;">
                     <thead>
                     <tr>
-                        <th>Firstname</th>
-                        <th>Lastname</th>
-                        <th>Email</th>
+                        <th>Total bikes</th>
+                        <th>Added bikes</th>
+                        <th>Removed bikes</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -65,6 +65,7 @@
     import quicklease_nav from "../../components/quicklease-nav";
     import GoogleMap from "../../components/GoogleMap";
     import Logout from "../../components/buttons/logout";
+    import School from "../models/School";
 
     export default {
         name: "location_detail",
@@ -81,13 +82,16 @@
                     { age: 89, first_name: 'Geneva', last_name: 'Wilson' },
                     { age: 38, first_name: 'Jami', last_name: 'Carney' }
                 ],
-                locations: [{
-                    id: "1",
-                    name: "Wijnhaven",
-                    type: "Hogeschool locatie",
-                    amount: "15 fietsen ophalen"
-                }]
+                location: {}
             }
+        },
+        beforeCreate(){
+            School.find(this.$route.params.id).then((res) => {
+                this.location = res.data.school;
+                this.location.type = "HogeSchool locatie";
+                this.location.amount = this.location.BikeRacks.length;
+            })
+
         }
     }
 </script>

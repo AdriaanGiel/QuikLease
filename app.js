@@ -57,7 +57,7 @@ app.use('/', indexRouter);
 // Setup cors protection
 cors.setupCorsConfig(app);
 app.use('/auth', authRouter);
-globalMiddleware(app);
+// globalMiddleware(app);
 app.use('/dummy', dummyRouter);
 app.use('/bikes', bikesRouter);
 app.use('/Schools', SchoolsRouter);

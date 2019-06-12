@@ -1,6 +1,6 @@
 import Base from './Base';
 
-class Bike extends Base{
+export default class Bike extends Base{
     constructor(){
         super();
     }

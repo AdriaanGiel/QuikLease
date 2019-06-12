@@ -46,8 +46,6 @@
     import locations_holder from '../../components/locations_holder';
     import GoogleMap from "../../components/GoogleMap";
     import Logout from "../../components/buttons/logout";
-
-
     export default {
         name: "dashboard",
         props: ['url'],

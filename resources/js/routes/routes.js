@@ -31,8 +31,9 @@ let routes = [
         }
     },
     {
-        path: '/location',
+        path: '/locations/:id',
         component: location_detail,
+        name: 'single-location',
         meta: {
             title: "Quiklease - location",
             metaTags: [

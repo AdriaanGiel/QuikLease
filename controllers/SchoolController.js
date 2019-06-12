@@ -1,4 +1,4 @@
-const {School} = require("../database");
+const {School,BikeRack} = require("../database");
 const ErrorHandler = require('../helpers/ErrorHandler');
 
 class SchoolController{
@@ -7,7 +7,10 @@ class SchoolController{
 
         ErrorHandler.handleTryAndCatch(async () => {
 
-            let schools = await School.findAll({});
+            let schools = await School.findAll({include:[{
+                    model:BikeRack
+                }]});
+
 
             return res.json({schools});
         },res);
@@ -29,9 +32,16 @@ class SchoolController{
     async single(req,res) {
 
         ErrorHandler.handleTryAndCatch(async () => {
-            let school = await School.findByPk(req.params.id);
+            let school = await School.findOne({
+                where: {
+                    id: req.params.id
+                },
+                include:[{model: BikeRack}]
+            });
 
             return res.json({school});
+
+
         }, res);
 
     }
