@@ -11,7 +11,7 @@ let bodyParser = require('body-parser');
 let globalMiddleware = require('./middleware/globalMiddleware');
 
 async function startDatabase(){
-  return await sequelize.sync({force:true});
+  return await sequelize.sync();
 }
 
 async function startAIDatabase(){
@@ -26,8 +26,6 @@ const indexRouter = require('./routes/index');
 const dummyRouter = require('./routes/dummy');
 const bikesRouter = require('./routes/bikes');
 const SchoolsRouter = require('./routes/schools');
-
-
 
 
 

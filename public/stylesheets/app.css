@@ -2171,6 +2171,7 @@
 
 body {
   background: white;
+  overflow: hidden;
 }
 
 .remove-padding {

@@ -13,6 +13,8 @@ async function createUser(faker){
         email: "adriaan@test.nl",
         password: 'hoi'
     });
+
+
 }
 
 module.exports = {
