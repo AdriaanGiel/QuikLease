@@ -1,5 +1,69 @@
+@import "~bootstrap-material-design/dist/css/bootstrap-material-design.min.css";
 @import "~bootstrap/dist/css/bootstrap.min.css";
+@import "~@material/textfield/mdc-text-field";
+
 
 body{
-    background: aqua;
+    background: white;
+    //overflow: hidden;
+}
+.remove-padding{
+     padding: 0px 0px 0px 0px;
+ }
+.remove-margin{
+    margin: 0px 0px 0px 0px;
+}
+.margin-top-30{
+    margin: 30px 0px 0px 0px;
+}
+
+g#fleet {
+    animation-name: move;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+.logo-holder{
+    display: block;
+    width: 11%;
+    height: 11%;
+}
+
+.clearfix {
+    overflow: auto;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+@keyframes move {
+    from {
+        transform: translateX(-500%);
+    }
+
+    to {
+        transform: translateX(0%);
+    }
+}
+
+g#fleet {
+    transform: translateX(-500%);
+    animation-name: movefleet;
+    animation-duration: 0.5s;
+    animation-delay: 0.5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes movefleet {
+    from {
+        transform: translateX(-500%);
+    }
+
+    to {
+        transform: translateX(0%);
+    }
 }

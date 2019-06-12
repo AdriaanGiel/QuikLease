@@ -6,8 +6,18 @@
 require('./bootstrap');
 
 import router from './routes/routes';
+import * as VueGoogleMaps from "vue2-google-maps";
+
+Vue.use(VueGoogleMaps, {
+    load: {
+        key: "AIzaSyB3TJYJHakiZKnM2W0q1JuqFlHzel7sKis",
+        libraries: "places" // necessary for places input
+    }
+});
 
 const app = new Vue({
     el: '#app',
     router: router
 });
+
+// $.material.init()

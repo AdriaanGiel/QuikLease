@@ -1,4 +1,8 @@
 /node_modules
-/.idea
-/public
 .idea
+/public
+/quicklease.sqlite
+/quickfleet.sqlite
+/.env
+/package-lock.json
+/yarn.lock
