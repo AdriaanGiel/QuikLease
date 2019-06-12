@@ -15,7 +15,11 @@
         <gmap-map
                 :center="center"
                 :zoom="12"
+<<<<<<< HEAD
                 style="width:100%;  height: 550px;"
+=======
+                style="width:100%; height: 550px;"
+>>>>>>> refs/remotes/origin/master
         >
             <gmap-marker
                     :key="index"

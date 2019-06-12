@@ -30,7 +30,8 @@
             },
             iconColor: {
                 type: String,
-                default: 'currentColor'
+                orange: '#fe8d12',
+                default: 'White'
             }
         }
     }
