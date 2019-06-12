@@ -11,7 +11,7 @@ let bodyParser = require('body-parser');
 let globalMiddleware = require('./middleware/globalMiddleware');
 
 async function startDatabase(){
-  return await sequelize.sync();
+  return await sequelize.sync({force:true});
 }
 
 async function startAIDatabase(){
