@@ -1,74 +1,4 @@
 <template>
-<<<<<<< HEAD
-    <div class="locations_holder">
-        <ul id="locations" class="clearfix">
-            <li class="float-left custom-list-item-holder custom-list-item">
-                <ul>
-                    <li class="custom-list-item">1.1</li>
-                    <li class="custom-list-item">1.2</li>
-                    <li class="custom-list-item">1.3</li>
-                </ul>
-            </li>
-            <li class="float-left custom-list-item-holder custom-list-item">
-                <ul>
-                    <li class="custom-list-item">2.1</li>
-                    <li class="custom-list-item">2.2</li>
-                    <li class="custom-list-item">2.3</li>
-                </ul>
-            </li>
-            <li class="float-left custom-list-item-holder custom-list-item">
-                <ul>
-                    <li class="custom-list-item">3.1</li>
-                    <li class="custom-list-item">3.2</li>
-                    <li class="custom-list-item">3.3</li>
-                </ul>
-            </li>
-        </ul>
-        <!--<ul id="locations">-->
-            <!--<li class="custom-list-item" v-for="(location, index) in locations" @click="onClick(index)" v-bind:id="location.id">-->
-                <!--<div :key="index">-->
-                    <!--<div class="location-name clearfix">-->
-                        <!--&lt;!&ndash;<div>{{ location.id }}</div>&ndash;&gt;-->
-                        <!--&lt;!&ndash;<div>{{ index }}</div>&ndash;&gt;-->
-                        <!--<div class="name"> {{ location.name }}</div>-->
-                        <!--<div class="arrow">&ndash;&gt;</div>-->
-                    <!--</div>-->
-                    <!--<div class="location-type"> {{ location.type }}</div>-->
-                    <!--<div class="bicycle-amount">{{ location.amount }}</div>-->
-                <!--</div>-->
-            <!--</li>-->
-        <!--</ul>-->
-        <!--<ul>-->
-            <!--<li class="custom-list-item" v-for="(location, index) in locations" @click="onClick(index)" v-bind:id="location.id">-->
-                <!--<div :key="index">-->
-                    <!--<div class="location-name clearfix">-->
-                        <!--&lt;!&ndash;<div>{{ location.id }}</div>&ndash;&gt;-->
-                        <!--&lt;!&ndash;<div>{{ index }}</div>&ndash;&gt;-->
-                        <!--<div class="name"> {{ location.name }}</div>-->
-                        <!--<div class="arrow">&ndash;&gt;</div>-->
-                    <!--</div>-->
-                    <!--<div class="location-type"> {{ location.type }}</div>-->
-                    <!--<div class="bicycle-amount">{{ location.amount }}</div>-->
-                <!--</div>-->
-            <!--</li>-->
-        <!--</ul>-->
-    </div>
-</template>
-
-<script>
-    import * as Vue from "vue";
-
-    // import Logo from '../components/icons/Logo'
-
-    export default {
-        name: "locations_holder",
-        components: { },
-        data: function () {
-            return {
-                locations: [{
-                        id: "1",
-                        name: "Wijhaven",
-=======
         <div id="locations_holder" class="locations_holder">
             <ul id="locations" class="clearfix locations">
                 <li class="float-left custom-list-item-holder custom-list-item" v-for="(locations) in newarray">
@@ -100,7 +30,6 @@
                 locations: [{
                         id: "1",
                         name: "Wijnhaven",
->>>>>>> refs/remotes/origin/master
                         type: "Hogeschool locatie",
                         amount: "15 fietsen ophalen"
                     },
@@ -117,31 +46,6 @@
                         amount: "60 fietsen brengen"
                     },{
                         id: "4",
-<<<<<<< HEAD
-                        name: "Wijhaven",
-                        type: "Hogeschool locatie",
-                        amount: "15 fietsen ophalen"
-                    },{
-                        id: "5",
-                        name: "Wijhaven",
-                        type: "Hogeschool locatie",
-                        amount: "15 fietsen ophalen"
-                    },{
-                        id: "5",
-                        name: "Wijhaven",
-                        type: "Hogeschool locatie",
-                        amount: "15 fietsen ophalen"
-                    },{
-                        id: "5",
-                        name: "Wijhaven",
-                        type: "Hogeschool locatie",
-                        amount: "15 fietsen ophalen"
-                    },{
-                        id: "5",
-                        name: "Wijhaven",
-                        type: "Hogeschool locatie",
-                        amount: "15 fietsen ophalen"
-=======
                         name: "Wijnhaven",
                         type: "Hogeschool locatie",
                         amount: "13 fietsen ophalen"
@@ -205,23 +109,10 @@
                         name: "Museumpark",
                         type: "Hogeschool locatie",
                         amount: "17 fietsen ophalen"
->>>>>>> refs/remotes/origin/master
                     }
                 ]
             }
         },
-<<<<<<< HEAD
-        methods: {
-            onClick: function (index) {
-                //let the algorithm do his job
-                // console.log(locations[index].id);
-                console.log(event.currentTarget.id)
-                document.getElementById('id1').style.color = 'red'
-            }
-        }
-    }
-
-=======
         computed: {
         },
         mounted() {
@@ -334,9 +225,6 @@
         // document.querySelector('.locations').style.setProperty('--m',position + 100);
     }
 
-
-
->>>>>>> refs/remotes/origin/master
 </script>
 
 
@@ -355,12 +243,6 @@
     }
 
     .locations_holder {
-<<<<<<< HEAD
-        /*float: right;*/
-        /*width: 90%;*/
-        /*width: 400px;*/
-=======
->>>>>>> refs/remotes/origin/master
         box-shadow: grey 3px 3px;
         margin-left: 12px;
         position: absolute;
@@ -369,25 +251,6 @@
         height: 400px;
     }
 
-<<<<<<< HEAD
-    .click-button{
-
-    }
-
-    .custom-list-item{
-        list-style: none;
-        /*padding: 24px 24px;*/
-    }
-    .custom-list-item-holder{
-        /*position: absolute;*/
-        width: 200px;
-        float: left ;
-    }
-
-    .float-left ul{
-        padding-left: 0px;
-=======
-
     .custom-list-item{
         list-style: none;
     }
@@ -395,53 +258,21 @@
         width: 313px;
         float: left;
         padding: 0px 32px;
->>>>>>> refs/remotes/origin/master
     }
 
     #locations{
         padding-left: 0px;
-<<<<<<< HEAD
-        /*width: 200px;*/
-=======
->>>>>>> refs/remotes/origin/master
         width: 1000%;
         height: 400px;
         position: absolute;
     }
 
-<<<<<<< HEAD
-=======
-
->>>>>>> refs/remotes/origin/master
     #locations li:nth-child(2){
         left: 200px;
     }
 
     #locations li:nth-child(3){
         left: 400px;
-<<<<<<< HEAD
-    }
-
-    .location-name >>> .name {
-        float: left;
-        font-size: 22px;
-    }
-    .location-name >>> .arrow {
-        float: right;
-    }
-    .location-type {
-        color: grey;
-        border-bottom: 1px solid black;
-    }
-    .bicycle-amount{
-        margin-top: 10px;
-    }
-
-    ul li:nth-child(3n+4) {
-        color: red;
-        /*float: right;*/
-=======
->>>>>>> refs/remotes/origin/master
     }
 
     .arrow{

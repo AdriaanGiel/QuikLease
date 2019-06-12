@@ -1,14 +1,8 @@
 <template>
     <div v-on:click="onClick" class="leaseplanButton">
-<<<<<<< HEAD
-        <div>{{ text }}</div>
-        <div class="icon-holder">
-                <IconBase width="70%" height="60%" viewBox="0 0 500 500" icon-name="location"><Location :is="child_component"></Location></IconBase>
-=======
         <div class="leaseplanButton-label">{{ textName }}</div>
         <div class="icon-holder">
                 <IconBase height="100%" :width="customWidth" :viewBox="customViewBox" icon-name="location"><Location :is="child_component"></Location></IconBase>
->>>>>>> refs/remotes/origin/master
         </div>
             <!--<IconBase icon-name="location"><Location :is="child_component"></Location></IconBase>-->
     </div>
@@ -47,10 +41,8 @@
 
     .leaseplanButton{
         width: 46%;
-<<<<<<< HEAD
-        height: 201px;
-=======
->>>>>>> refs/remotes/origin/master
+        /*height: 201px;*/
+
         background-color: #fe8d12;
         box-shadow: grey 3px 3px;
         -webkit-border-radius: 6px;
@@ -59,13 +51,8 @@
         position: relative;
         float: left;
     }
-<<<<<<< HEAD
 
-
-    .leaseplanButton >>> div{
-=======
     .leaseplanButton .leaseplanButton-label{
->>>>>>> refs/remotes/origin/master
         font-size: 20px;
         font-weight: bold;
         font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -76,13 +63,7 @@
     }
 
     .icon-holder{
-<<<<<<< HEAD
-        padding: 20% 13%;
-        text-align: center;
-        /*margin-top: 20%;*/
-=======
         padding: 0% 15% 20% 15%;
         text-align: center;
->>>>>>> refs/remotes/origin/master
     }
 </style>

@@ -22,9 +22,9 @@
                                 </div>
                             </div>
 
-                            <div v-else class="verification-input-box" >
+                            <div v-else class="verification-input-box">
                                 <div class="mdc-text-field">
-                                    <input class="mdc-text-field__input" v-model="verificationCode" type="number">
+                                    <input class="mdc-text-field__input" style="margin: 0px auto;display: block;width: 50%;" v-model="verificationCode" type="number">
                                     <div class="mdc-line-ripple"></div>
                                     <label class="mdc-floating-label">Email</label>
                                 </div>
@@ -47,6 +47,7 @@
     import Logo from '../../components/icons/Logo';
     import {MDCTextField} from '@material/textfield';
     import Auth from '../policies/authenticate';
+
 
     export default {
         name: "login",
@@ -164,7 +165,7 @@
     }
 
     .loginform {
-        position: absolute;
+        /*position: absolute;*/
         margin: 0px auto;
         display: block;
         animation-name: loginfadein;
@@ -175,11 +176,8 @@
     }
 
     .forminputs{
-        left: 20%;
-        top: 23%;
-        height: 600px;
         width: 600px;
-        margin: 0px auto;
+        margin: 50% auto 20% auto;
         opacity: 0;
         animation-name: loginfadein;
         animation-duration: 1s;
@@ -191,7 +189,12 @@
     .inputs{
         display: block;
         margin: 0px auto;
-        width: 60%;
+        width: 50%;
+    }
+    .verification-input-box{
+        margin: 0px auto;
+        display: block;
+        width: 24%;
     }
 
     .btninput button{
@@ -241,7 +244,7 @@
             transform: scale(1);
         }
 
-        99% {
+        99.99% {
             transform: scale(5);
             height: 45vh;
         }

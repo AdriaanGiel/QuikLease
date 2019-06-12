@@ -15,12 +15,7 @@
         <gmap-map
                 :center="center"
                 :zoom="12"
-<<<<<<< HEAD
-                style="width:100%;  height: 550px;"
-=======
-                style="width:100%; height: 550px;"
->>>>>>> refs/remotes/origin/master
-        >
+                style="width:100%;  height: 550px;">
             <gmap-marker
                     :key="index"
                     v-for="(m, index) in markers"

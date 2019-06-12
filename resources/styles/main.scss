@@ -5,7 +5,10 @@
 
 body{
     background: white;
-    //overflow: hidden;
+}
+
+.row{
+    display: block;
 }
 .remove-padding{
      padding: 0px 0px 0px 0px;

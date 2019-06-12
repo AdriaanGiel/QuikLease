@@ -29,7 +29,8 @@
         url("../../public/images/map.png");
     }
     .leaseplanButton{
-        width: 23%;
+        width: 26%;
+        height: 200px;
     }
 
 </style>
