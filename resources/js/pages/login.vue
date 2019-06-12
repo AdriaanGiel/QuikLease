@@ -28,13 +28,13 @@
                                     <div class="mdc-line-ripple"></div>
                                     <label class="mdc-floating-label">Email</label>
                                 </div>
-                                
+
                             </div>
 
                             <div class="button-box btninput">
                                 <button @click="this.loginAndSwitchToVerification" class="btn btn-default" type="submit">Submit <i v-if="showLoader" class="fas fa-spin fa-sync-alt"></i></button>
                             </div>
-                        
+
                     </form>
                 </div>
             </div>

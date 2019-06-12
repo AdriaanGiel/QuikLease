@@ -34,6 +34,7 @@
 
         </div>
         <Logout></Logout>
+        <pop-up></pop-up>
     </section>
 </template>
 
@@ -49,6 +50,8 @@
     import GoogleMap from "../../components/GoogleMap";
     import CustomHeader from "../../components/Custom-Header";
     import Logout from "../../components/buttons/logout";
+    import PopUp from "../../components/PopUp";
+
     export default {
         name: "dashboard",
         props: ['url'],
@@ -61,7 +64,9 @@
             GoogleMap,
             locations_holder,
             quicklease_nav,
-            Logout
+            Logout,
+            loactions_holder,
+            PopUp
         },
         methods: {
 
