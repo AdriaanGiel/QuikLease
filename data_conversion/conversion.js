@@ -1,10 +1,9 @@
 // setup requirements
 const { AI_data } = require('../ai_database')
 const axios = require('axios');
-const util = require('util');
 
 let HRlocationsAmmount = 1; // How many locations to generate for
-let iterations = 500;       // How many data entries to generate per location
+let iterations = 5000;       // How many data entries to generate per location
 
 // FUNCTIONS TO USE IN CODE
 // generate random int between two values
