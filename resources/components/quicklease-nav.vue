@@ -40,4 +40,7 @@
     .logo-holder{
         float: right;
     }
+    nav{
+        display: block;
+    }
 </style>

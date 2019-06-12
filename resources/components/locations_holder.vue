@@ -225,8 +225,6 @@
         // document.querySelector('.locations').style.setProperty('--m',position + 100);
     }
 
-
-
 </script>
 
 
@@ -253,7 +251,6 @@
         height: 400px;
     }
 
-
     .custom-list-item{
         list-style: none;
     }
@@ -269,7 +266,6 @@
         height: 400px;
         position: absolute;
     }
-
 
     #locations li:nth-child(2){
         left: 200px;

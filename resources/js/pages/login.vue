@@ -6,33 +6,38 @@
             <div class="logo">
                 <IconBase x="0px" y="0px" width="100%" height="100%" viewBox="0 0 803 903" icon="Logo"><Logo class="logosvg"></Logo></IconBase>
             </div>
-            <div class="inputs">
-                <div class="loginform" v-show="this.showForm">
+                <div class="loginform forminputs">
                     <form class="form" action="/" method="post">
-                        <div class="forminputs">
-                            <div class="inputs">
-                                <!-- <div class="mdc-text-field mdc-text-field--no-label">
-                                    <input type="text" class="mdc-text-field__input"  aria-label="Label">
-                                <div class="mdc-line-ripple"></div>
-                                <label class="mdc-floating-label">Email</label>
-                                </div> -->
+
+                            <div class="inputs" v-if="showForm">
                                 <div class="mdc-text-field">
-                                    <input class="mdc-text-field__input">
+                                    <input class="mdc-text-field__input" v-model="userData.email" type="email">
                                     <div class="mdc-line-ripple"></div>
                                     <label class="mdc-floating-label">Email</label>
                                 </div>
                                 <div class="mdc-text-field">
-                                    <input class="mdc-text-field__input">
+                                    <input class="mdc-text-field__input" v-model="userData.password" type="password">
                                     <div class="mdc-line-ripple"></div>
                                     <label class="mdc-floating-label">Wachtwoord</label>
                                 </div>
-                                <input type="submit" class="btn btn-primary btninput">
                             </div>
-                        </div>
+
+                            <div v-else class="verification-input-box">
+                                <div class="mdc-text-field">
+                                    <input class="mdc-text-field__input" style="margin: 0px auto;display: block;width: 50%;" v-model="verificationCode" type="number">
+                                    <div class="mdc-line-ripple"></div>
+                                    <label class="mdc-floating-label">Email</label>
+                                </div>
+                                
+                            </div>
+
+                            <div class="button-box btninput">
+                                <button @click="this.loginAndSwitchToVerification" class="btn btn-default" type="submit">Submit <i v-if="showLoader" class="fas fa-spin fa-sync-alt"></i></button>
+                            </div>
+                        
                     </form>
                 </div>
             </div>
-        </div>
     </div>
 </template>
 
@@ -41,6 +46,8 @@
     import IconBase from '../../components/IconBase';
     import Logo from '../../components/icons/Logo';
     import {MDCTextField} from '@material/textfield';
+    import Auth from '../policies/authenticate';
+
 
     export default {
         name: "login",
@@ -48,16 +55,54 @@
             IconBase,
             Logo
         },
+        watch:{
+            userData:{
+                handler(val){
+                    if(this.userData.email !== "" && this.userData.password !== ""){
+                        this.changeButton(false)
+                    }else{
+                        this.changeButton(true)
+                    }
+                },
+                deep:true
+            }
+        },
         data(){
             return {
-                showForm: false
+                showForm: true,
+                userData: {
+                    email: "",
+                    password: ""
+                },
+                submitForm:true,
+                showLoader: false,
+                verificationCode:0,
+                token:""
+            }
+        },
+        methods:{
+            changeButton(val){
+                this.submitForm = val;
+            },
+            async loginAndSwitchToVerification(e){
+                e.preventDefault();
+                this.showLoader = true;
+                Auth.getToken(this.userData).then((res) => {
+                    this.token = res.data.token;
+                    this.showLoader = false;
+                    this.showForm = false;
+                    this.submitForm = true;
+                });
+            },
+            async verifyCode(e){
+                e.preventDefault();
+
+                Auth.handleToken(code,this.token).then((res) => {
+
+                });
             }
         },
         mounted(){
-            setTimeout(() => {
-                    console.log('in settimeout')
-                this.showForm = true
-                }, 4000);
             const textField = new MDCTextField(document.querySelector('.mdc-text-field'));
         },
 
@@ -68,6 +113,9 @@
 </script>
 
 <style scoped>
+    .body{
+        overflow: hidden;
+    }
     .background {
         height: 100vh;
         width: 100vw;
@@ -117,12 +165,9 @@
     }
 
     .loginform {
-        position: absolute;
-        left: 33%;
-        top: 33%;
-        height: 33%;
-        width: 33%;
-        margin: auto auto;
+        /*position: absolute;*/
+        margin: 0px auto;
+        display: block;
         animation-name: loginfadein;
         animation-duration: 1s;
         animation-delay: 4s;
@@ -131,24 +176,35 @@
     }
 
     .forminputs{
-        position: absolute;
-        left: 20%;
-        top: 20%;
-        height: 300px;
-        width: 300px;
-        margin: auto auto;
-        background-color: #F5F5F5;
-    }
-
-    .btninput{
-        align-content: center;
-        margin-top: 20px;
-        margin-left: 20%;
+        width: 600px;
+        margin: 50% auto 20% auto;
+        opacity: 0;
+        animation-name: loginfadein;
+        animation-duration: 1s;
+        animation-delay: 4s;
+        animation-iteration-count: 1;
+        animation-fill-mode: both;
     }
 
     .inputs{
-        margin-top: 25%;
-        margin-left: 25%;
+        display: block;
+        margin: 0px auto;
+        width: 50%;
+    }
+    .verification-input-box{
+        margin: 0px auto;
+        display: block;
+        width: 24%;
+    }
+
+    .btninput button{
+        align-content: center;
+        margin: 20px auto;
+        display: block;
+    }
+
+    .form{
+
     }
 
     @keyframes loginfadein {
@@ -188,12 +244,14 @@
             transform: scale(1);
         }
 
-        99% {
+        99.99% {
             transform: scale(5);
+            height: 45vh;
         }
         100% {
             transform: scale(5);
             display: none;
+            height: 0px;
         }
     }
 

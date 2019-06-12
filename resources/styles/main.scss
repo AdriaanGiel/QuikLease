@@ -5,7 +5,10 @@
 
 body{
     background: white;
-    //overflow: hidden;
+}
+
+.row{
+    display: block;
 }
 .remove-padding{
      padding: 0px 0px 0px 0px;
@@ -27,6 +30,16 @@ g#fleet {
     display: block;
     width: 11%;
     height: 11%;
+}
+
+.clearfix {
+    overflow: auto;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
 }
 
 .clearfix {

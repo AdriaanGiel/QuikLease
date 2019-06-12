@@ -32,7 +32,6 @@
         <div class="google-map">
             <iframe src="https://snazzymaps.com/embed/160252" width="100%" height="500px" style="border:none;"></iframe>
 
-            <google-map />
         </div>
         <Logout></Logout>
     </section>
@@ -46,12 +45,15 @@
     import leaseplanButtonOrange from '../../components/buttons/leaseplanButtonOrange';
     import start from '../../components/buttons/start';
     import locations_holder from '../../components/locations_holder';
+    // import image from "../../../resources/images/Logo.png"
     import GoogleMap from "../../components/GoogleMap";
+    import CustomHeader from "../../components/Custom-Header";
     import Logout from "../../components/buttons/logout";
     export default {
         name: "dashboard",
         props: ['url'],
         components:{
+            CustomHeader,
             logo,
             iconbase,
             leaseplanButtonOrange,
@@ -62,22 +64,7 @@
             Logout
         },
         methods: {
-            // onClick: function (index) {
-            //     //let the algorithm do his job
-            //     // console.log(locations[index].id);
-            //     console.log(index);
-            //
-            //     console.log('targetid = ' + event.target.id);
-            //     console.log("event id = " + event.currentTarget.id);
-            //     let targetId = event.currentTarget.id;
-            //
-            //
-            //     let para = document.querySelector('.locations');
-            //     console.log("para = " + para);
-            //     let elemtentPosition = document.getElementById('locations').style.left;
-            //     console.log('element position = ' + elemtentPosition);
-            //     slide(elemtentPosition);
-            // }
+
         },
         data() {
             return {
@@ -93,6 +80,7 @@
 </script>
 
 <style scoped>
+
     .leaseplanButtonLeft{
         margin-right: 30px;
     }

@@ -41,6 +41,8 @@
 
     .leaseplanButton{
         width: 46%;
+        /*height: 201px;*/
+
         background-color: #fe8d12;
         box-shadow: grey 3px 3px;
         -webkit-border-radius: 6px;
@@ -49,6 +51,7 @@
         position: relative;
         float: left;
     }
+
     .leaseplanButton .leaseplanButton-label{
         font-size: 20px;
         font-weight: bold;
