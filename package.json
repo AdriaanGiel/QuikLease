@@ -41,7 +41,7 @@
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
     "pluralize": "^8.0.0",
-    "pug": "2.0.0-beta11",
+    "pug": "3.0.1",
     "sequelize": "^5.7.5",
     "sqlite3": "^4.0.8",
     "uiv": "^0.31.5",
