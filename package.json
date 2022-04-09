@@ -34,7 +34,7 @@
     "jsonfile": "^5.0.0",
     "jsonwebtoken": "^8.5.1",
     "laravel-mix": "^4.0.15",
-    "moment": "^2.24.0",
+    "moment": "^2.29.2",
     "morgan": "~1.9.0",
     "nexmo": "^2.4.1",
     "npm": "^6.9.0",
